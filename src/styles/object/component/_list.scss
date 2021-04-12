@@ -1,0 +1,68 @@
+.c-list {
+  $this: #{&};
+  line-height: 1.8;
+  counter-reset: order order-notes;
+  &__item {
+    display: table;
+    &::before {
+      display: table-cell;
+      white-space: nowrap;
+    }
+  }
+  &__item--dot {
+    @extend #{$this}__item;
+    &::before {
+      content: '・';
+    }
+  }
+  &__item--notes {
+    @extend #{$this}__item;
+    &::before {
+      content: '※';
+    }
+  }
+  &__item--order {
+    @extend #{$this}__item;
+    counter-increment: order;
+    &::before {
+      content: counter(order)'.';
+    }
+  }
+  &__item--order-notes {
+    @extend #{$this}__item;
+    counter-increment: order-notes;
+    &::before {
+      content: '※'counter(order-notes);
+    }
+  }
+  &__item[data-attr]::before {
+    content: attr(data-attr);
+  }
+  //位置
+  &__item--center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__item--right {
+    margin-left: auto;
+  }
+  //サイズ
+  &--small {
+    @extend #{$this};
+    line-height: 1.4;
+    font-size: 1rem;
+    @include mq-up() {
+      font-size: 1.2rem;
+    }
+  }
+  // 余白
+  * + & {
+    margin-top: 10px;
+    @include mq-up(){
+      margin-top: 20px;
+    }
+  }
+  &__item + &__item {
+    margin-top: 5px;
+  }
+}

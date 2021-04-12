@@ -1,0 +1,74 @@
+.p-card {
+  display: flex;
+  width: 100%;
+  color: #333;
+  &__in {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+  }
+  &__hero {
+    position: relative;
+    height: 20vw;
+    max-height: 200px;
+    overflow: hidden;
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform $transition;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+  }
+  &__title {
+    line-height: 1.4;
+    font-weight: bold;
+  }
+  &__text {
+    line-height: 1.4;
+    margin-top: 10px;
+  }
+  &__button-group {
+    margin-top: auto;
+    padding-top: 20px;
+  }
+  // hover
+  &[href]:hover &__image {
+    @include mq-up() {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.p-card-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: -20px;
+  @include mq-up(){
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  &__item {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+    @include mq-up(){
+      max-width: 50%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  // 余白
+  * + & {
+    margin-top: 20px;
+    @include mq-up(){
+      margin-top: 40px;
+    }
+  }
+}

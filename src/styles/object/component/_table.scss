@@ -1,0 +1,43 @@
+.c-table {
+  $this: #{&};
+  table-layout: fixed;
+  border-right: 1px solid #136e7b;
+  border-bottom: 1px solid #136e7b;
+  line-height: 1.4;
+  font-size: 1.2rem;
+  @include mq-up() {
+    font-size: 1.4rem;
+  }
+  th,td {
+    border-left: 1px solid #136e7b;
+    border-top: 1px solid #136e7b;
+    padding: 5px;
+    @include mq-up() {
+      padding: 10px;
+    }
+  }
+  th {
+    background-color: #248b9a;
+    color: #fff;
+  }
+  td {
+    background-color: #fff;
+  }
+  //はみ出す要素をスクロールに
+  &-scroll {
+    overflow-x: auto;
+    #{$this} {
+      @include mq-down() {
+        min-width: $contents-width;
+      }
+    }
+  }
+  // 余白
+  * + &,
+  * + &-scroll {
+    margin-top: 10px;
+    @include mq-up(){
+      margin-top: 20px;
+    }
+  }
+}

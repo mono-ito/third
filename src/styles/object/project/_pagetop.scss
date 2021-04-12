@@ -1,0 +1,18 @@
+.p-pagetop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  opacity: 0;
+  transition: opacity $transition;
+  &__trigger {
+    font-size: 3rem;
+    &::before {
+      min-width: 30px;
+      min-height: 30px;
+      margin-right: 0;
+    }
+  }
+  &.is-active {
+    opacity: 1;
+  }
+}

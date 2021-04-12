@@ -1,0 +1,27 @@
+.c-heading-01 {
+  padding: 0 $contents-gatter-sp;
+  text-align: center;
+  line-height: 1.2;
+  font-size: 2.6rem;
+  font-weight: bold;
+  @include mq-up() {
+    max-width: $contents-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 $contents-gatter-pc;
+    font-size: 3.2rem;
+  }
+  // 余白
+  & {
+    margin-top: 30px;
+    @include mq-up(){
+      margin-top: 50px;
+    }
+  }
+  & + [class] {
+    margin-top: 20px;
+    @include mq-up(){
+      margin-top: 40px;
+    }
+  }
+}

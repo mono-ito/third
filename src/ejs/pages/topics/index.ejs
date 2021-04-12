@@ -1,0 +1,255 @@
+<%_;
+// ページ設定
+var page = {
+  title: '',
+  description: '',
+  keywords: '',
+  breadcrumb01Text: '',
+  breadcrumb01Link: '',
+  breadcrumb02Text: '',
+  breadcrumb02Link: '',
+  breadcrumb03Text: '',
+  uniqueHead: '',
+  uniqueFoot: ''
+}
+_%>
+<%- include(rootPath + 'parts/_head', {page:page}); %>
+
+<%# ここからヘッダー %>
+<%- include(rootPath + 'parts/_header', {page:page}); %>
+<%# ここからヘッダー %>
+
+<div class="c-hero" style="background-image: url(http://placehold.it/3000x600);"><span class="u-hidden">画像のalt</span></div>
+
+<%# ここからパンくず %>
+<%- include(rootPath + 'parts/_breadcrumb', {page:page}); %>
+<%# ここまでパンくず %>
+
+<%# ここからコンテンツ %>
+<main class="l-main">
+
+  <h1 class="c-heading-01">大見出し</h1>
+
+  <section class="l-section l-block">
+    <h2 class="c-heading-02">見出し</h2>
+    <p class="c-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+
+    <div class="p-flag">
+      <figure class="p-flag__hero">
+        <img class="p-flag__image" src="http://placehold.it/600x350" width="300" alt="">
+        <figcaption class="p-flag__caption">キャプションキャプションキャプションキャプションキャプションキャプションキャプションキャプションキャプションキャプション</figcaption>
+      </figure>
+      <div class="p-flag__body">
+        <p class="c-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        <div class="c-button-group"><a class="c-button-middle" href="#">中ボタン</a></div>
+      </div>
+    </div>
+
+    <div class="p-flag p-flag--reverse">
+      <figure class="p-flag__hero">
+        <img class="p-flag__image" src="http://placehold.it/300x200" width="150" alt="">
+        <figcaption class="p-flag__caption">キャプションキャプションキャプションキャプションキャプションキャプションキャプション</figcaption>
+      </figure>
+      <div class="p-flag__body">
+        <p class="c-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        <p class="c-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        <div class="c-button-group"><a class="c-button-middle" href="#">中ボタン</a></div>
+      </div>
+    </div>
+
+    <h3 class="c-heading-03">小見出し</h3>
+    <p class="c-text">テキストテキスト<a class="c-link" href="#">リンク</a>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+
+    <table class="c-table">
+      <colgroup>
+        <col style="width: 30%;">
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <th>見出し</th>
+          <th>見出し</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>見出し</th>
+          <td>通常の表組み</td>
+        </tr>
+        <tr>
+          <th>見出し</th>
+          <td>通常の表組み</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="c-table-list">
+      <colgroup>
+        <col style="width: 30%;">
+        <col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <th>見出し</th>
+          <td>リスト型表組み</td>
+        </tr>
+        <tr>
+          <th>見出し</th>
+          <td>リスト型表組み</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <figure class="c-table-scroll">
+      <table class="c-table">
+        <colgroup>
+          <col style="width: 30%;">
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
+        <thead>
+          <tr>
+            <th>見出し</th>
+            <th>見出し</th>
+            <th>見出し</th>
+            <th>見出し</th>
+            <th>見出し</th>
+            <th>見出し</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>見出し</th>
+            <td>スマホ時はスクロールする表組み</td>
+            <td>スマホ時はスクロールする表組み</td>
+            <td>スマホ時はスクロールする表組み</td>
+            <td>スマホ時はスクロールする表組み</td>
+            <td>スマホ時はスクロールする表組み</td>
+          </tr>
+          <tr>
+            <th>見出し</th>
+            <td>スマホ時はスクロールする表組み</td>
+            <td>スマホ時はスクロールする表組み</td>
+            <td>スマホ時はスクロールする表組み</td>
+            <td>スマホ時はスクロールする表組み</td>
+            <td>スマホ時はスクロールする表組み</td>
+          </tr>
+        </tbody>
+      </table>
+    </figure>
+
+    <ul class="c-list--small">
+      <li class="c-list__item c-list__item--notes">注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト</li>
+      <li class="c-list__item c-list__item--notes">注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト注釈リスト</li>
+    </ul>
+
+  </section>
+
+  <section class="l-section--fill l-block">
+    <h2 class="c-heading-02">見出し</h2>
+    <p class="c-text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+
+    <div class="p-card-group">
+      <div class="p-card-group__item">
+        <a class="p-card" href="#">
+          <div class="p-card__in">
+            <figure class="p-card__hero">
+              <img class="p-card__image js-fit" src="http://placehold.it/1000x200" alt="">
+            </figure>
+            <div class="p-card__body">
+              <p class="p-card__title">カード見出し</p>
+              <p class="p-card__text">カードテキストカードテキストカードテキスト</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="p-card-group__item">
+        <a class="p-card" href="#">
+          <div class="p-card__in">
+            <figure class="p-card__hero">
+              <img class="p-card__image js-fit" src="http://placehold.it/500x500" alt="">
+            </figure>
+            <div class="p-card__body">
+              <p class="p-card__title">カード見出し</p>
+              <p class="p-card__text">カードテキストカードテキストカードテキストカードテキストカードテキストカードテキスト</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="p-card-group__item">
+        <div class="p-card">
+          <div class="p-card__in">
+            <figure class="p-card__hero">
+              <img class="p-card__image js-fit" src="http://placehold.it/1000x1000" alt="">
+            </figure>
+            <div class="p-card__body">
+              <p class="p-card__title">カード見出し</p>
+              <p class="p-card__text">カードテキストカードテキストカードテキスト</p>
+              <div class="p-card__button-group c-button-group"><a class="c-button" href="#">通常ボタン</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-card-group__item">
+        <div class="p-card">
+          <div class="p-card__in">
+            <figure class="p-card__hero">
+              <img class="p-card__image js-fit" src="http://placehold.it/300x300" alt="">
+            </figure>
+            <div class="p-card__body">
+              <p class="p-card__title">カード見出しカード見出しカード見出しカード見出しカード見出し</p>
+              <p class="p-card__text">カードテキストカードテキストカードテキスト</p>
+              <div class="p-card__button-group c-button-group"><a class="c-button" href="#">通常ボタン</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ul class="c-list--small">
+      <li class="c-list__item c-list__item--order">連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト</li>
+      <li class="c-list__item c-list__item--order">連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト連番リスト</li>
+    </ul>
+  </section>
+
+  <section class="l-section l-block">
+    <h2 class="c-heading-02">見出し</h2>
+    <ul class="c-list">
+      <li class="c-list__item"><a class="c-icon--arrow" href="#">リンク</a></li>
+      <li class="c-list__item"><a class="c-icon--arrow c-icon--window" href="#">リンク</a></li>
+      <li class="c-list__item"><a class="c-icon--arrow c-icon--pdf" href="#" target="_blank">リンクPDF</a></li>
+    </ul>
+
+    <ul class="p-info">
+      <li class="p-info__item">
+        <p class="p-info__head">2018/12/31</p>
+        <div class="p-info__body">
+          <p class="p-info__text"><a href="#">テキストテキストテキストテキストテキストテキストテキストテキスト</a></p>
+        </div>
+      </li>
+      <li class="p-info__item">
+        <p class="p-info__head">2018/12/31</p>
+        <div class="p-info__body">
+          <p class="p-info__text"><a class="c-icon--after c-icon--window" href="#" target="_blank">テキストテキストテキストテキストテキストテキストテキストテキスト</a></p>
+        </div>
+      </li>
+      <li class="p-info__item">
+        <p class="p-info__head">2018/12/31</p>
+        <div class="p-info__body">
+          <p class="p-info__text"><a class="c-icon--after c-icon--pdf" href="#" target="_blank">テキストテキストテキストテキストテキストテキストテキストテキスト</a></p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+</main>
+<%# ここまでコンテンツ %>
+
+<%# ここからフッター %>
+<%- include(rootPath + 'parts/_footer', {page:page}); %>
+<%# ここまでフッター %>
+
+<%- include(rootPath + 'parts/_foot', {page:page}); %>

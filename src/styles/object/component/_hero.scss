@@ -1,0 +1,9 @@
+.c-hero {
+  height: 150px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include mq-up() {
+    height: 300px;
+  }
+}

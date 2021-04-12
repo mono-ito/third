@@ -1,0 +1,33 @@
+//max-width
+@include responsive-down(".u-bd-none") {
+  border: none !important;
+}
+@include responsive-down(".u-bdt-none") {
+  border-top: none !important;
+}
+@include responsive-down(".u-bdb-none") {
+  border-bottom: none !important;
+}
+@include responsive-down(".u-bdl-none") {
+  border-left: none !important;
+}
+@include responsive-down(".u-bdr-none") {
+  border-right: none !important;
+}
+
+//min-width
+@include responsive-up(".u-bd-none") {
+  border: none !important;
+}
+@include responsive-up(".u-bdt-none") {
+  border-top: none !important;
+}
+@include responsive-up(".u-bdb-none") {
+  border-bottom: none !important;
+}
+@include responsive-up(".u-bdl-none") {
+  border-left: none !important;
+}
+@include responsive-up(".u-bdr-none") {
+  border-right: none !important;
+}

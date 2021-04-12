@@ -1,0 +1,338 @@
+<%_;
+// ページ設定
+var page = {
+  title: 'スタイルガイド',
+  description: '',
+  keywords: '',
+  breadcrumb01Text: 'トップ',
+  breadcrumb01Link: '/',
+  breadcrumb02Text: 'サンプル',
+  breadcrumb02Link: '/sample.html',
+  breadcrumb03Text: 'スタイルガイド',
+  uniqueHead: '',
+  uniqueFoot:
+  "<script>"+
+    "$(function(){"+
+      "$('.l-header .js-scroll').on('click',function(){"+
+        "$('.l-header .is-active').removeClass('is-active');"+
+        "$('.l-header .is-open').removeClass('is-open');"+
+        "$('.l-header__submenu').removeAttr('style');"+
+      "});"+
+    "});"+
+  "</script>"
+}
+_%>
+<%- include(rootPath + 'parts/_head', {page:page}); %>
+
+<!-- ここからスタイルガイドcss -->
+<style>
+.auto-gen-code-snippet {
+  display: block;
+  max-height: 300px;
+  padding: 10px;
+  margin-top: 10px;
+  overflow: auto;
+  background-color: #000;
+  color: #fff;
+}
+.c-heading-styleguide-01 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  border-bottom: 2px solid #000;
+  padding-bottom: 10px;
+  font-size: 3rem;
+}
+.c-heading-styleguide-02 {
+  margin-bottom: 20px;
+  line-height: 1.2;
+  font-size: 2rem;
+}
+.c-heading-styleguide-03 {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #333;
+  font-weight: normal;
+  font-size: 1.4rem;
+  color: #fff;
+}
+.p-fullscreen {
+  display: none;
+}
+.p-fullscreen.is-active {
+  display: block;
+}
+</style>
+<!-- ここまでスタイルガイドcss -->
+
+<%# ここからヘッダー %>
+<!-- ここからヘッダー -->
+<header class="l-header">
+  <div class="l-header__in l-block">
+    <%_ if(set[i].category === 'index') { _%>
+    <h1 class="l-header__logo"><a class="l-header__logo-link" href="#"><img class="l-header__logo-image" src="http://placehold.it/118x30&text=LOGO" alt="LOGO"></a></h1>
+    <%_ } else { _%>
+    <p class="l-header__logo"><a class="l-header__logo-link" href="#"><img class="l-header__logo-image" src="http://placehold.it/118x30&text=LOGO" alt="LOGO"></a></p>
+    <%_ } _%>
+    <a href="#" class="l-header__menu-trigger js-toggle" data-delay="300"><span class="l-header__menu-trigger-mark"></span></a>
+    <div class="l-header__utility l-header__utility--top">
+      <div class="l-header__utility-in">
+        <form method="" class="l-header__search">
+          <input class="l-header__search-input" type="search" placeholder="Search">
+          <div class="l-header__search-trigger">
+            <button class="l-header__search-button" type="submit" name="">検索</button>
+          </div>
+        </form>
+        <nav class="l-header__menu l-block js-sticky">
+          <ul class="l-header__menu-list">
+            <li class="l-header__menu-item">
+              <a class="l-header__menu-link js-accordion" data-group="menu" href="#">layout</a>
+              <div class="l-header__submenu">
+                <div class="l-header__submenu-in">
+                  <ul class="l-header__submenu-list">
+                    <% for(var l in styleguide.layout){ %>
+                    <li class="l-header__submenu-item"><a class="l-header__submenu-link js-scroll" href="#<%= l.replace('.ejs','') %>"><span class="c-icon--arrow"><%= l.replace('.ejs','') %></span></a></li>
+                    <% } %>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="l-header__menu-item">
+              <a class="l-header__menu-link js-accordion" data-group="menu" href="#">component</a>
+              <div class="l-header__submenu">
+                <div class="l-header__submenu-in">
+                  <ul class="l-header__submenu-list">
+                    <% for(var c in styleguide.component){ %>
+                    <li class="l-header__submenu-item"><a class="l-header__submenu-link js-scroll" href="#<%= c.replace('.ejs','') %>"><span class="c-icon--arrow"><%= c.replace('.ejs','') %></span></a></li>
+                    <% } %>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="l-header__menu-item">
+              <a class="l-header__menu-link js-accordion" data-group="menu" href="#">project</a>
+              <div class="l-header__submenu">
+                <div class="l-header__submenu-in">
+                  <ul class="l-header__submenu-list">
+                    <% for(var p in styleguide.project){ %>
+                    <li class="l-header__submenu-item"><a class="l-header__submenu-link js-scroll" href="#<%= p.replace('.ejs','') %>"><span class="c-icon--arrow"><%= p.replace('.ejs','') %></span></a></li>
+                    <% } %>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="l-header__menu-item">
+              <a class="l-header__menu-link js-accordion" data-group="menu" href="#">js</a>
+              <div class="l-header__submenu">
+                <div class="l-header__submenu-in">
+                  <ul class="l-header__submenu-list">
+                    <% for(var j in styleguide.js){ %>
+                    <li class="l-header__submenu-item"><a class="l-header__submenu-link js-scroll" href="#<%= j.replace('.ejs','') %>"><span class="c-icon--arrow"><%= j.replace('.ejs','') %></span></a></li>
+                    <% } %>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="l-header__menu-item">
+              <a class="l-header__menu-link js-accordion" data-group="menu" href="#">utility</a>
+              <div class="l-header__submenu">
+                <div class="l-header__submenu-in">
+                  <ul class="l-header__submenu-list">
+                    <% for(var u in styleguide.utility){ %>
+                      <li class="l-header__submenu-item"><a class="l-header__submenu-link js-scroll" href="#<%= u.replace('.ejs','') %>"><span class="c-icon--arrow"><%= u.replace('.ejs','') %></span></a></li>
+                    <% } %>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- ここまでヘッダー -->
+<%# ここからヘッダー %>
+
+<%# ここからパンくず %>
+<%- include(rootPath + 'parts/_breadcrumb', {page:page}); %>
+<%# ここまでパンくず %>
+
+<%# ここからコンテンツ %>
+<main class="l-main">
+
+
+<!-- ここからレイアウト -->
+<section class="l-block">
+  <h2 id="layout" class="c-heading-styleguide-01">layout</h2>
+  <% for(var l in styleguide.layout){ %>
+    <h3 id="<%= l.replace('.ejs','') %>" class="c-heading-styleguide-03"><%= l.replace('.ejs','') %></h3>
+    <div class="code-sample">
+      <%- include(rootPath + 'styleguide/' + styleguide.layout[l]); %>
+    </div>
+  <% } %>
+</section>
+<!-- ここまでレイアウト -->
+
+<!-- ここからコンポーネント -->
+<section class="l-block">
+  <h2 id="component" class="c-heading-styleguide-01">component</h2>
+  <% for(var c in styleguide.component){ %>
+    <h3 id="<%= c.replace('.ejs','') %>" class="c-heading-styleguide-03"><%= c.replace('.ejs','') %></h3>
+    <div class="code-sample">
+      <%- include(rootPath + 'styleguide/' + styleguide.component[c]); %>
+    </div>
+  <% } %>
+</section>
+<!-- ここまでコンポーネント -->
+
+<!-- ここからプロジェクト -->
+<section class="l-block">
+  <h2 id="project" class="c-heading-styleguide-01">project</h2>
+  <% for(var p in styleguide.project){ %>
+    <h3 id="<%= p.replace('.ejs','') %>" class="c-heading-styleguide-03"><%= p.replace('.ejs','') %></h3>
+    <div class="code-sample">
+      <%- include(rootPath + 'styleguide/' + styleguide.project[p]); %>
+    </div>
+  <% } %>
+</section>
+<!-- ここまでプロジェクト -->
+
+<!-- ここからjsモジュール -->
+<section class="l-section--fill l-block">
+  <h2 id="js" class="c-heading-styleguide-01">js</h2>
+  <% for(var j in styleguide.js){ %>
+    <h3 id="<%= j.replace('.ejs','') %>" class="c-heading-styleguide-03"><%= j.replace('.ejs','') %></h3>
+    <div class="code-sample">
+      <%- include(rootPath + 'styleguide/' + styleguide.js[j]); %>
+    </div>
+  <% } %>
+</section>
+<!-- ここまでjsモジュール -->
+
+<!-- ここから汎用 -->
+<section class="l-section l-block">
+  <h2 id="utility" class="c-heading-styleguide-01">utility</h2>
+  <% for(var u in styleguide.utility){ %>
+    <h3 id="<%= u.replace('.ejs','') %>" class="c-heading-styleguide-03"><%= u.replace('.ejs','') %></h3>
+    <div class="code-sample">
+      <%- include(rootPath + 'styleguide/' + styleguide.utility[u]); %>
+    </div>
+  <% } %>
+</section>
+<!-- ここまで汎用 -->
+
+</main>
+<%# ここまでコンテンツ %>
+
+<%# ここからフッター %>
+<%- include(rootPath + 'parts/_footer', {page:page}); %>
+<%# ここまでフッター %>
+
+<!-- ここからスタイルガイドscript -->
+<script>
+(function () {
+'use strict';
+
+var snippets;
+
+window.onload = function () {
+  createCodeSamples();
+  snippets = document.querySelectorAll('.auto-gen-code-snippet');
+};
+
+function createCodeSamples() {
+  var codeWrappers = document.querySelectorAll('.code-sample');
+
+  for (var i = 0; i < codeWrappers.length; i++) {
+  var codeWrapper = codeWrappers[i];
+  var clonedNodes = getClonedNonTextNodes(codeWrapper);
+
+  beautifyNodes(clonedNodes);
+
+  var preElement = document.createElement('pre');
+  var codeElement = document.createElement('code');
+
+  for (var j = 0; j < clonedNodes.length; j++) {
+    codeElement.appendChild(document.createTextNode(clonedNodes[j].outerHTML));
+
+    if (j + 1 < clonedNodes.length) {
+    codeElement.appendChild(document.createTextNode('\n'));
+    }
+  }
+
+  preElement.appendChild(codeElement);
+  preElement.classList.add('auto-gen-code-snippet','auto-gen-code-visible'); // 初期はコード非表示の場合「auto-gen-code-visible」削除
+  preElement.classList.add('container');
+
+  var clearDiv = document.createElement('div');
+  clearDiv.classList.add('clear');
+
+  var parent = codeWrapper.parentNode;
+
+  if (codeWrapper.nextSibling) {
+    parent.insertBefore(preElement, codeWrapper.nextSibling);
+  } else {
+    parent.appendChild(preElement);
+  }
+
+  parent.insertBefore(clearDiv, preElement);
+  }
+}
+
+function getClonedNonTextNodes(element) {
+  var nonTextNodes = [];
+  var childNodes = element.childNodes;
+
+  for (var i = 0; i < childNodes.length; i++) {
+  var childElement = childNodes[i];
+
+  if (childElement.nodeType !== 3) {
+    // Found a valid child element
+    nonTextNodes.push(childElement.cloneNode(true));
+  }
+  }
+
+  return nonTextNodes;
+}
+
+function beautifyNodes(elements) {
+  for (var i = 0; i < elements.length; i++) {
+  beautifyNode(elements[i], 0);
+  }
+}
+
+function beautifyNode(element, depth) {
+  var childNodes = element.childNodes;
+  var singleIndent = '  ';
+  var currentDepthSpacing = '';
+
+  for (var i = 0; i < depth; i++) {
+  currentDepthSpacing += singleIndent;
+  }
+
+  var nextDepthSpacing = currentDepthSpacing + singleIndent;
+
+  for (var j = 0; j < childNodes.length; j++) {
+  var childElement = childNodes[j];
+
+  if (childElement.nodeType === 3) {
+    // found a text node
+    if (childElement.nodeValue.indexOf('\n') >= 0) {
+    if (j + 1 < childNodes.length) {
+      childElement.nodeValue = '\n' + nextDepthSpacing;
+    } else {
+      childElement.nodeValue = '\n' + currentDepthSpacing;
+    }
+    }
+  } else {
+    beautifyNode(childElement, depth + 1);
+  }
+  }
+}
+})();
+</script>
+<!-- ここまでスタイルガイドscript -->
+
+<%- include(rootPath + 'parts/_foot', {page:page}); %>

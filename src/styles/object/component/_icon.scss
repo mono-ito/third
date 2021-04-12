@@ -1,0 +1,90 @@
+.c-icon {
+  $this: #{&};
+  &::before,
+  &::after {
+    display: inline-block;
+    min-width: 1.62rem;
+    min-height: 1.62rem;
+    vertical-align: -.13em;
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  &::before {
+    content: '';
+    margin-right: .5rem;
+  }
+  &:empty::before {
+    margin-right: 0;
+  }
+  //afterアイコン
+  &--after {
+    &::before {
+      content: none;
+    }
+    &::after {
+      content: '';
+      margin-left: 5px;
+    }
+  }
+  //矢印（右）
+  &--arrow {
+    @extend #{$this};
+    &::before,
+    &::after {
+      background-image: svg-load('assets/image/ico/ico_arrow_right_01.svg', fill=#e39600);
+    }
+  }
+  &--arrow-white {
+    @extend #{$this};
+    &::before,
+    &::after {
+      background-image: svg-load('assets/image/ico/ico_arrow_right_01.svg', fill=#ffffff);
+    }
+  }
+
+  //矢印（左）
+  &--arrow-left {
+    @extend #{$this};
+    &::before,
+    &::after {
+      background-image: svg-load('assets/image/ico/ico_arrow_left_01.svg', fill=#e39600);
+    }
+  }
+
+  //丸矢印（上）
+  &--arrow-circle-top {
+    @extend #{$this};
+    &::before,
+    &::after {
+      background-image: svg-load('assets/image/ico/ico_arrow_circle_top.svg', fill=#e39600);
+    }
+  }
+
+  //別窓
+  &--window {
+    @extend #{$this};
+    &::before,
+    &::after {
+      background-image: svg-load('assets/image/ico/ico_window_01.svg', fill=#e39600);
+    }
+  }
+  &--window-white {
+    @extend #{$this};
+    &::before,
+    &::after {
+      background-image: svg-load('assets/image/ico/ico_window_01.svg', fill=#fff);
+    }
+  }
+
+  //PDF
+  &--pdf {
+    @extend #{$this};
+    &::before,
+    &::after {
+      background-image: svg-load('assets/image/ico/ico_pdf_01.svg', fill=#e00100);
+    }
+  }
+
+}

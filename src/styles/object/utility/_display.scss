@@ -1,0 +1,33 @@
+//max-width
+@include responsive-down(".u-dn") {
+  display: none !important;
+}
+
+@include responsive-down(".u-db") {
+  display: block !important;
+}
+
+@include responsive-down(".u-di") {
+  display: inline !important;
+}
+
+@include responsive-down(".u-dib") {
+  display: inline-block !important;
+}
+
+//min-width
+@include responsive-up(".u-dn") {
+  display: none !important;
+}
+
+@include responsive-up(".u-db") {
+  display: block !important;
+}
+
+@include responsive-up(".u-di") {
+  display: inline !important;
+}
+
+@include responsive-up(".u-dib") {
+  display: inline-block !important;
+}

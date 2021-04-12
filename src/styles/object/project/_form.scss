@@ -1,0 +1,97 @@
+.p-form {
+  &__foot {
+    margin-top: 30px;
+    text-align: center;
+    letter-spacing: -.5em;
+    @include mq-up() {
+      margin-top: 50px;
+    }
+  }
+  &__button {
+    margin: 0 5px;
+    @include mq-up() {
+      margin: 0 10px;
+    }
+  }
+  &__item {
+    @include mq-up() {
+      display: flex;
+      align-items: baseline;
+    }
+  }
+  &__head {
+    display: inline-flex;
+    align-items: baseline;
+    width: 100%;
+    @include mq-up() {
+      width: 30%;
+      padding-right: 20px;
+    }
+  }
+  &__tag {
+    flex-shrink: 0;
+    margin-left: auto;
+    padding-left: 10px;
+  }
+  &__title {
+    font-weight: bold;
+  }
+  &__body {
+    margin-top: 10px;
+    @include mq-up() {
+      flex: 1;
+      margin-top: 0;
+    }
+  }
+  &__block {
+    display: flex;
+    align-items: center;
+  }
+  &__invalid {
+    color: #e00100;
+  }
+  &__inline {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 -10px -10px;
+    @include mq-up() {
+      padding-top: 9px;
+    }
+  }
+  &__inline-item {
+    max-width: 50%;
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    @include mq-up() {
+      max-width: none;
+      width: auto;
+    }
+  }
+  &__unit {
+    margin: 0 5px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  // 余白
+  * + & {
+    margin-top: 10px;
+    @include mq-up(){
+      margin-top: 20px;
+    }
+  }
+  &__item + &__item {
+    margin-top: 20px;
+  }
+  &__block + &__block {
+    margin-top: 20px;
+    @include mq-up() {
+      margin-top: 5px;
+    }
+  }
+}

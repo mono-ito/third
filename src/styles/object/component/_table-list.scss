@@ -1,0 +1,50 @@
+.c-table-list {
+  table-layout: fixed;
+  border-right: 1px solid #136e7b;
+  border-bottom: 1px solid #136e7b;
+  line-height: 1.4;
+  font-size: 1.2rem;
+  @include mq-up() {
+    font-size: 1.4rem;
+  }
+  th,td {
+    border-left: 1px solid #136e7b;
+    border-top: 1px solid #136e7b;
+    padding: 5px;
+    @include mq-up() {
+      padding: 10px;
+    }
+  }
+  th {
+    background-color: #248b9a;
+    color: #fff;
+  }
+  td {
+    background-color: #fff;
+  }
+  //SPレイアウト
+  &,thead,tfoot,tbody,tr,th,td {
+    @include mq-down() {
+      display: block;
+      width: 100%;
+    }
+  }
+  tr {
+    @include mq-down() {
+      overflow: hidden;
+    }
+  }
+  th,td {
+    @include mq-down() {
+      float: left;
+      clear: both;
+    }
+  }
+  // 余白
+  * + & {
+    margin-top: 10px;
+    @include mq-up(){
+      margin-top: 20px;
+    }
+  }
+}

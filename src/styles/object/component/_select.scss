@@ -1,0 +1,6 @@
+.c-select {
+  @extend .c-control;
+  padding: 5px 30px 5px 10px;
+  background: #fff svg-load('assets/image/ico/ico_arrow_bottom_01.svg', fill=#e39600) no-repeat right 10px center;
+  background-size: 15px;
+}

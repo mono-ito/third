@@ -1,0 +1,72 @@
+.c-button {
+  $this: #{&};
+  display: inline-flex;
+  width: 100%;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  line-height: 1.2;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  border: 1px solid #248b9a;
+  background-color: #248b9a;
+  letter-spacing: normal;
+  color: #fff;
+  @include mq-up(){
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  &__text {
+    display: inline-flex;
+  }
+  // size
+  &-auto {
+    @extend #{$this};
+    width: auto;
+  }
+  &-small {
+    @extend #{$this};
+    max-width: 100px;
+  }
+  &-middle {
+    @extend #{$this};
+    max-width: 200px;
+  }
+  &-large {
+    @extend #{$this};
+    max-width: 300px;
+  }
+  // colors
+  &--strong {
+    border-color: #e00100;
+    background-color: #e00100;
+  }
+  &--weak {
+    border-color: #999;
+    background-color: #999;
+  }
+  // 非活性
+  &[disabled] {
+    @extend #{$this};
+    opacity: .3;
+  }
+  // group
+  &-group {
+    display: flex;
+    justify-content: center;
+    margin-left: -5px;
+    margin-right: -5px;
+    @include mq-up(){
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+  }
+  // 余白
+  * + &-group {
+    margin-top: 10px;
+    @include mq-up(){
+      margin-top: 20px;
+    }
+  }
+}

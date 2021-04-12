@@ -1,0 +1,52 @@
+<%_;
+// ルート設定
+Object.keys(set).forEach(function (key) {
+  var url = set[key].url;
+  if(fileName == '/'+ url){
+    i = [key];
+  }
+})
+// サイト設定
+var site = {
+  domain: 'http://example.com/'
+}
+_%>
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="<% if(set[i].category == 'index') { %>og: http://ogp.me/ns# website: http://ogp.me/ns/website#<% } else { %>og: http://ogp.me/ns# article: http://ogp.me/ns/article#<% } %>">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width">
+<meta name="format-detection" content="telephone=no">
+<title><% if(page.title) { %><%= page.title %><% } else { %><%= set[i].title %><% } %></title>
+<meta name="description" content="<% if(page.description) { %><%= page.description %><% } else { %><%= set[i].description %><% } %>">
+<meta name="keywords" content="<% if(page.keywords) { %><%= page.keywords %><% } else { %><%= set[i].keywords %><% } %>">
+<!-- OGP -->
+<meta property="og:site_name" content="site_name">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:type" content="<% if(set[i].category == 'index') { %>website<% } else { %>article<% } %>">
+<meta property="og:title" content="<% if(page.title) { %><%= page.title %><% } else { %><%= set[i].title %><% } %>">
+<meta property="og:description" content="<% if(page.description) { %><%= page.description %><% } else { %><%= set[i].description %><% } %>">
+<meta property="og:url" content="<%= site.domain %><%= set[i].url %>">
+<meta property="og:image" content="<%= site.domain %>ogp-image.jpg">
+<!-- /OGP -->
+<!-- twitterCard -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@">
+<!-- /twitterCard -->
+<!-- js -->
+<script src="<%- root %>/assets/js/head.js"></script>
+<!-- /js -->
+<!-- canonical -->
+<link rel="canonical" href="<%= site.domain %><%= set[i].url %>">
+<!-- /canonical -->
+<!-- css -->
+<link rel="stylesheet" href="<%- root %>/assets/css/common.css">
+<!-- /css -->
+<%_ if(page.uniqueHead){ _%>
+<!-- unique -->
+<%- page.uniqueHead %>
+<!-- /unique -->
+<%_ } _%>
+</head>
+<body class="<% if(set[i].theme) { %>theme-<%= set[i].theme %><% } %><% if(set[i].category) { %> category-<%= set[i].category %><% } %>">

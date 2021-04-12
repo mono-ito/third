@@ -1,0 +1,14 @@
+.l-footer {
+  margin-top: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #333;
+  &__copyright {
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+    @include mq-up() {
+      font-size: 1.2rem;
+    }
+  }
+}

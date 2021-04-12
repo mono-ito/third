@@ -1,0 +1,20 @@
+
+$line-height-min: 10;
+$line-height-max: 20;
+$line-height-multiple: 1;
+
+//max-width
+@for $i from $line-height-min through $line-height-max / $line-height-multiple {
+  $class: #{($i * $line-height-multiple)};
+  @include responsive-down(".u-lh-#{str-insert($class, '-', 2)}") {
+    line-height: #{($i * $line-height-multiple)} !important;
+  }
+}
+
+//min-width
+@for $i from $line-height-min through $line-height-max / $line-height-multiple {
+  $class: #{($i * $line-height-multiple)};
+  @include responsive-up(".u-lh-#{str-insert($class, '-', 2)}") {
+    line-height: #{($i * $line-height-multiple)} !important;
+  }
+}

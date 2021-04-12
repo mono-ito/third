@@ -1,0 +1,32 @@
+.p-accordion {
+  counter-reset: accordion;
+  &__item {
+    counter-increment: accordion;
+  }
+  &__item + &__item {
+    margin-top: 10px;
+  }
+  &__trigger {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    line-height: 1.2;
+    text-align: left;
+    background-color: #248b9a;
+    color: #fff;
+  }
+  &__body {
+    @include hidden();
+  }
+  &__body-in {
+    padding: 10px;
+    background-color: #fff;
+  }
+  // 余白
+  * + & {
+    margin-top: 10px;
+    @include mq-up(){
+      margin-top: 20px;
+    }
+  }
+}

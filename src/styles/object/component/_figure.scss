@@ -1,0 +1,10 @@
+.c-figure {
+  text-align: center;
+  // 余白
+  * + & {
+    margin-top: 10px;
+    @include mq-up(){
+      margin-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+//max-width
+@include responsive-down(".u-left") {
+  text-align: left !important;
+}
+
+@include responsive-down(".u-center") {
+  text-align: center !important;
+}
+
+@include responsive-down(".u-right") {
+  text-align: right !important;
+}
+
+//min-width
+@include responsive-up(".u-left") {
+  text-align: left !important;
+}
+
+@include responsive-up(".u-center") {
+  text-align: center !important;
+}
+
+@include responsive-up(".u-right") {
+  text-align: right !important;
+}
