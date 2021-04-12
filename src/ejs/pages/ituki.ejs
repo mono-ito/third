@@ -17,6 +17,36 @@
     <!-- /css -->
   </head>
   <body>
-    hello
+    <header class="l-header">
+      <nav class="l-navigation">
+        <div class="c-hamburger">
+          <div class="c-hamburger__line c-hamburger__line--1"></div>
+          <div class="c-hamburger__line c-hamburger__line--2"></div>
+          <div class="c-hamburger__line c-hamburger__line--3"></div>
+        </div>
+        <ul class="l-navigation__list">
+          <li class="l-navigation__item">
+            <a class="l-navigation__link" href="#">Menu01 </a>
+          </li>
+          <li class="l-navigation__item">
+            <a class="l-navigation__link" href="#">Menu02 </a>
+          </li>
+          <li class="l-navigation__item">
+            <a class="l-navigation__link" href="#">Menu03 </a>
+          </li>
+          <li class="l-navigation__item">
+            <a class="l-navigation__link" href="#">Menu04 </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <script>
+      const hamurger = document.querySelector(".c-hamburger");
+      const navbar = document.querySelector(".l-navigation");
+      hamurger.addEventListener("click", () => {
+        navbar.classList.toggle("is-open");
+        console.log("hello");
+      });
+    </script>
   </body>
 </html>
