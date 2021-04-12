@@ -20,7 +20,7 @@ $cMenuOpen: $cBlack;
   background-color: transparent;
   display: flex;
   align-items: center;
-  z-index: 100;
+  z-index: 999;
 
   &__inner {
     height: 100%;
@@ -59,11 +59,12 @@ $cMenuOpen: $cBlack;
 }
 
 .c-mobile-menu {
-  //   display: none;
+  display: none;
   position: fixed;
   right: 0;
   top: 100px;
-  width: 375px;
+  width: 100%;
+  z-index: 60;
 
   &__btn {
     background-color: unset;
@@ -99,7 +100,7 @@ $cMenuOpen: $cBlack;
     visibility: hidden;
     transition: opacity 1s;
     cursor: pointer;
-    z-index: 200;
+    z-index: 30;
   }
   &__item {
     position: relative;
@@ -111,7 +112,7 @@ $cMenuOpen: $cBlack;
     &::after {
       position: absolute;
       top: 50%;
-      left: 6%;
+      left: 20px;
       content: "";
       margin-top: -9px;
       border: 7px solid transparent;
@@ -254,6 +255,7 @@ $cMenuOpen: $cBlack;
   }
 
   .c-mobile-menu {
+    display: none;
     &__btn {
       display: none;
     }

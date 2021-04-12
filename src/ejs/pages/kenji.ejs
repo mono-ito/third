@@ -55,17 +55,21 @@
     </nav>
     <script language="javascript" type="text/javascript">
     let button = document.querySelector('.c-mobile-menu__btn');
+    let menu = document.querySelector('.c-mobile-menu');
     button.addEventListener('click', () => {button.classList.toggle('is-open');});
+    button.addEventListener('click', () => {menu.classList.toggle('is-open');});
 
         // class MobileMenu {
         //     constructor() {
         //         this.DOM = {};
         //         this.DOM.btn = document.querySelector('.c-mobile-menu__btn');
         //         this.DOM.cover = document.querySelector('.c-mobile-menu__cover');
+        //         this.eventType = this._getEventType();
         //         this._addEvent();
         //     }
 
         //     _getEventType() {
+        //         return window.ontouchstart ? 'touchstart' : 'click';
         //     }
 
         //     _toggle() {
