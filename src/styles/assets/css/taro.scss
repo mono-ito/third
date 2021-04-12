@@ -7,95 +7,49 @@
 // [個別スタイル]
 //
 // ========================================================================== */
-
+body{
+    background-color: white;
+}
 .l-header{
     height: 100px;
     width: 100%;
-    &-after{
-        height: 100px;
-        width: 100%;
-    }
 }
-.l-global-navbar{
+.p-global-navbar{
     height: 100%;
-    &-after{
-        height: 100%;
-    }
+    width: 100%;
+
 }
 .p-global-navbar__list{
     height: 100%;
     display: flex;
-    &-after{
-        height: 100%;
-        display: flex;
-    }
 }
 .c-global-navbar{
-    &__item{
+    &__link{
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 100%;
         width: 25%;
-        list-style: none;
         border-right: solid 1px #BFBFBF;
         border-bottom: solid 1px #BFBFBF;
-        &-after{
-            position: relative;
-            height: 100%;
-            width: 25%;
-            list-style: none;
-            border-right: solid 1px #BFBFBF;
-            border-bottom: solid 1px #BFBFBF;
-            &:last-child{
-                border-right: none;
-            }
-            &::after{
-                content: '▶︎';
-                color: transparent;
-                position: absolute;
-                transform: translate(-50%, -50%);
-                top: 50%;
-                font-size: 7px;
-                left: 3.5px;
-                transition: all 0.6s;
-            }
-            &::before{
-                content: '';
-                position: absolute;
-                left: 2.67%;
-                bottom: 8px;
-                width: 0;
-                height: 4px;
-                background-color: transparent;
-                transition: all 0.6s;
-            }
-            &:hover{
-                transition: 0.6s;
-                background-color: #F1F1F1;
-                &::after{
-                    color: #7EA400;
-                    left: 33%;
-                }
-                &::before{
-                    background-color: #7EA400;
-                    width: 94.67%;
-                }
-            }
-            &:hover .c-global-navbar__icon-after{
-                display: none;
-            }
-        }
         &:last-child{
             border-right: none;
         }
-        &::after{
-            content: '▶︎';
-            color: transparent;
-            position: absolute;
-            transform: translate(-50%, -50%);
-            top: 50%;
-            font-size: 7px;
-            left: 3.5px;
-            transition: all 0.6s;
+        &:hover {
+            transition: 0.6s;
+            background-color: #F1F1F1;
+            &::before{
+                background-color: #7EA400;
+                width: 94.67%;
+            }
+        }
+        &:hover .global-navbar__icon{
+            border-left: 7px solid transparent;
+        }
+        &:hover .global-navbar__icon::after{
+            border-left: 7px solid #7EA400;
+            left: 0;
         }
         &::before{
             content: '';
@@ -107,63 +61,46 @@
             background-color: transparent;
             transition: all 0.6s;
         }
-        &:hover{
-            transition: 0.6s;
-            background-color: #F1F1F1;
-            &::after{
-                color: #7EA400;
-                left: 33%;
-            }
-            &::before{
-                background-color: #7EA400;
-                width: 94.67%;
-            }
-        }
-        &:hover .c-global-navbar__icon{
-            display: none;
-        }
     }
+    &__item{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.global-navbar{
     &__icon{
-        position: absolute;
+        position: relative;
+        border-top: 3.34px solid transparent;
+        border-right: 7px solid  transparent;
+        border-bottom: 3.34px solid transparent;
+        border-left: 7px solid #7EA400;
         display: block;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        left: 33%;
-        font-size: 7px;
-        color: #7EA400;
-        &-after{
+        margin-right: 12.3px;
+        &::after{
             position: absolute;
+            top: -3.5px;
+            transform: translate(50% 50%);
+            content: '';
+            border-top: 3.34px solid transparent;
+            border-right: 7px solid  transparent;
+            border-bottom: 3.34px solid transparent;
+            border-left: 7px solid transparent;
             display: block;
-            transform: translate(-50%, -50%);
-            top: 50%;
-            left: 33%;
-            font-size: 7px;
-            color: #7EA400;
+            margin-right: 12.3px;
+            left: 0;
+            // position: absolute;
+            // right: 77.3px;
+            // transition: all 0.6s;
         }
     }
-    &__link{
-        position: absolute;
+    &__title{
         display: block;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        left: 50%;
-        margin-left: 18.8％;
         font-size: 14px;
         font-family: Roboto;
         text-decoration: none;
         color: #000000;
-        &-after{
-            position: absolute;
-            display: block;
-            transform: translate(-50%, -50%);
-            top: 50%;
-            left: 50%;
-            margin-left: 18.8％;
-            font-size: 14px;
-            font-family: Roboto;
-            text-decoration: none;
-            color: #000000;    
-        }
     }
 }
 
@@ -173,61 +110,56 @@
         position: relative;
         border-bottom: none;
     }
-    .p-hamburger-menu{
-        height: 100%;
-        width: 100%;
+    .hamburger-menu{
+        position: absolute;
         right: 0;
         height: 100%;
         width: 108px;
         z-index: 90;
     }
-        .c-hamburger-line{
+    .hamburger-line{
         position: absolute;
         display: block;
         right: 24px;
         height: 5px;
         width: 60px;
         background-color: #7EA400;
-        &:nth-child(1){
-            top: 25px;
-        }
-        &:nth-child(2){
-            transform: translateX(-50%) translateY(-50%);
-            top: 50px;
-            right: -6px;
-        }
-        &:nth-child(3){
-            top: 73px;
-        }
+            &:nth-child(1){
+                top: 25px;
+            }
+            &:nth-child(2){
+                transform: translateX(-50%) translateY(-50%);
+                top: 49px;
+                right: -6px;
+            }
+            &:nth-child(3){
+                top: 73px;
+            }
     }
-    .l-global-navbar{
+    .p-global-navbar{
         display: none;
     }
     //  before
 
     // after
-    .l-global-navbar{
-        display: flex;
+    .p-global-navbar{
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 100px;
     }
     .l-header-after{
         position: relative;
-        border-bottom: solid 1px #9b6e6e;
+        border-bottom: solid 1px #BFBFBF;
     }
-    .p-global-navbar__list-after{
-        display: flex;
-        flex-direction: column;
-        height: 100px;
-        width: 100%;
-    }
-    .p-hamburger-menu-after{
-        height: 100%;
-        width: 100%;
+    .hamburger-menu-after{
+        position: absolute;
         right: 0;
         height: 100%;
         width: 108px;
-        z-index: 90;
+        // z-index: 90;
     }
-    .c-hamburger-line-after{
+    .hamburger-line-after{
         position: absolute;
         display: block;
         right: 24px;
@@ -235,27 +167,28 @@
         width: 60px;
         background-color: #7EA400;
         &:nth-child(1){
-            top: 50px;
+            top: 7px;
             transform: rotate(45deg);
         }
         &:nth-child(2){
             transform: translateX(-50%) translateY(-50%);
-            top: 50px;
+            top: 7px;
             right: -6px;
             width: 0;
         }
         &:nth-child(3){
-            top: 50px;
+            top: 7px;
             transform: rotate(-45deg);
         }
     }
     .p-global-navbar__list-after{
         position: absolute;
         display: block;
+        height: 100px;
+        width: 100%;
         // transition: 0.6s;
         // right: 100%;
     }
-
     .c-global-navbar__item-after{
         width: 100%;
         border-right: none;
@@ -270,12 +203,12 @@
     .c-global-navbar__item-after:hover::after{
         left: 46.4px;
     }
-    .c-global-navbar__icon-after{
+    .global-navbar__icon-after{
         transform: translateY(-50%);
         left: 46.4px;
         font-size: 14px;
     }
-    .c-global-navbar__link-after{
+    .global-navbar__title-after{
         transform: translateY(-50%);
         left: 76px;
         font-size: 30px;

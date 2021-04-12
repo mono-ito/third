@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width">
 <meta name="format-detection" content="telephone=no">
-<title>ここに支給されたtitleを入力して下さい</title>
+<title>css-traning</title>
 <meta name="description" content="ここに支給されたdescriptionを入力して下さい">
 <meta name="keywords" content="ここに支給されたkeywordsを入力して下さい">
 <!-- css -->
@@ -14,20 +14,29 @@
 <!-- /css -->
 </head>
 <body>
-    <header class="l-header l-header-after">
-        <div class="p-hamburger-menu p-hamburger-menu-after">
-            <span class="c-hamburger-line c-hamburger-line-after"></span>
-            <span class="c-hamburger-line c-hamburger-line-after"></span>
-            <span class="c-hamburger-line c-hamburger-line-after"></span>
+    <header class="l-header">
+        <div class="hamburger-menu" id="hamburger">
+            <span class="hamburger-line" id="line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
         </div>
-        <nav class="l-global-navbar l-global-navbar-after">
-            <ul class="p-global-navbar__list p-global-navbar__list-after">
-                <li class="c-global-navbar__item c-global-navbar__item-after"><span class="c-global-navbar__icon c-global-navbar__icon-after">▶︎</span><a class="c-global-navbar__link c-global-navbar__link-after" href="">Menu01</a></li>
-                <li class="c-global-navbar__item c-global-navbar__item-after"><span class="c-global-navbar__icon c-global-navbar__icon-after">▶︎</span><a class="c-global-navbar__link c-global-navbar__link-after" href="">Menu02</a></li>
-                <li class="c-global-navbar__item c-global-navbar__item-after"><span class="c-global-navbar__icon c-global-navbar__icon-after">▶︎</span><a class="c-global-navbar__link c-global-navbar__link-after" href="">Menu03</a></li>
-                <li class="c-global-navbar__item c-global-navbar__item-after"><span class="c-global-navbar__icon c-global-navbar__icon-after">▶︎</span><a class="c-global-navbar__link c-global-navbar__link-after" href="">Menu04</a></li>
+        <nav class="p-global-navbar">
+            <ul class="p-global-navbar__list">
+                <a class="c-global-navbar__link" href=""><li class="c-global-navbar__item"><span class="global-navbar__icon"></span><span class="global-navbar__title" href="">Menu01</span></li></a>
+                <a class="c-global-navbar__link" href=""><li class="c-global-navbar__item"><span class="global-navbar__icon"></span><span class="global-navbar__title" href="">Menu02</span></li></a>
+                <a class="c-global-navbar__link" href=""><li class="c-global-navbar__item"><span class="global-navbar__icon"></span><span class="global-navbar__title" href="">Menu03</span></li></a>
+                <a class="c-global-navbar__link" href=""><li class="c-global-navbar__item"><span class="global-navbar__icon"></span><span class="global-navbar__title" href="">Menu04</span></li></a>
             </ul>
         </nav>
     </header>
 </body>
+<!-- <script>
+      function hamburger(){
+    document.getElementById('line').classList.toggle('hamburger-line-after');
+  };
+  document.getElementById('hamburger').addEventListener('click',function(){
+    hamburger();
+  });
+
+</script> -->
 </html>
