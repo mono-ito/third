@@ -1,9 +1,219 @@
 // [環境設定]
-@import '../../foundation/_variables';
-@import '../../foundation/_mixin';
+@import "../../foundation/_variables";
+@import "../../foundation/_mixin";
 
 /* ==========================================================================//
 //
 // [個別スタイル]
 //
 // ========================================================================== */
+$cBlack: #7ea400;
+$cMenuClose: $cBlack;
+$cMenuOpen: $cBlack;
+
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+
+  &__inner {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+  &__nav {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-left: 20px;
+
+    & > a {
+      color: $cBlack;
+      text-decoration: none !important;
+      text-transform: uppercase;
+    }
+  }
+
+  & .logo {
+    font-size: 38px;
+    justify-content: center;
+  }
+}
+
+.c-mobile-menu {
+  position: fixed;
+  right: 0;
+  top: 60px;
+  width: 300px;
+
+  & .logo {
+    padding: 0 40px;
+    font-size: 38px;
+  }
+
+  &__btn {
+    background-color: unset;
+    border: none;
+    outline: none !important;
+    cursor: pointer;
+
+    & > span {
+      background-color: $cMenuClose;
+      width: 35px;
+      height: 2px;
+      display: block;
+      margin-bottom: 9px;
+      transition: transform 0.7s;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s;
+    cursor: pointer;
+    z-index: 200;
+  }
+  &__item {
+    list-style: none;
+    display: block;
+    transform: translate3d(0, 0, -1000px);
+    padding: 0 40px;
+    transition: transform 0.3s, opacity 0.2s;
+    opacity: 0;
+  }
+  &__link {
+    display: block;
+    margin-top: 30px;
+    color: $cBlack;
+    text-decoration: none !important;
+  }
+}
+
+.is-open {
+  &.c-mobile-menu {
+    &__cover {
+      opacity: 1;
+      visibility: visible;
+    }
+    &__item {
+      transform: none;
+      opacity: 1;
+
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          transition-delay: $i * 0.07s;
+        }
+      }
+    }
+    &__btn {
+      & > span {
+        background-color: $cMenuClose;
+
+        &:nth-child(1) {
+          transition-delay: 70ms;
+          transform: translateY(11px) rotate(135deg);
+        }
+        &:nth-child(2) {
+          transition-delay: 0s;
+          transform: translateX(-18px) scaleX(0);
+        }
+        &:nth-child(3) {
+          transition-delay: 140ms;
+          transform: translateY(-11px) rotate(-135deg);
+        }
+      }
+    }
+  }
+}
+
+@include mq-up() {
+  .l-header {
+    &__logo {
+      display: none;
+    }
+    &__nav {
+      display: block;
+      height: 100%;
+      width: 100%;
+      margin: 0 auto;
+    }
+    &__list {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    &__item {
+      margin: 0;
+      border: 1px solid #f1f1f1;
+      width: 270px;
+      text-align: center;
+      :before {
+        content: "";
+        top: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $cBlack;
+      }
+    }
+    &__link {
+      padding: 40px 100px;
+      color: #333 !important;
+      text-align: center;
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        content: "";
+        margin-top: -4px;
+        border: 7px solid transparent;
+        border-top-width: 5px;
+        border-bottom-width: 5px;
+        border-left-color: $cBlack;
+        transition: all 0.6s;
+      }
+      &:hover {
+        background-color: #f1f1f1;
+        &.l-header__link::after {
+          left: 25%;
+        }
+      }
+    }
+  }
+
+  .c-mobile-menu {
+    &__btn {
+      display: none;
+    }
+  }
+}
