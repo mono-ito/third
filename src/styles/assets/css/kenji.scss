@@ -128,7 +128,9 @@ body {
   border: none;
   outline: none !important;
   cursor: pointer;
-
+  @include mq-up() {
+    display: none;
+  }
   & > span {
     background-color: $cBlack;
     width: 35px;
