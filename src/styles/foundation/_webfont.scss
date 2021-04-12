@@ -1,0 +1,31 @@
+@if $font-noto-sans-jp {
+
+/* ==========================================================================//
+//
+// [Web font]
+//
+// ========================================================================== */
+
+// Noto Sans JP
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Noto Sans CJK JP Regular"),
+       url(/assets/fonts/NotoSansJP-Regular.woff2) format('woff2'),
+       url(/assets/fonts/NotoSansJP-Regular.woff) format('woff'),
+       url(/assets/fonts/NotoSansJP-Regular.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Noto Sans CJK JP Bold"),
+       url(/assets/fonts/NotoSansJP-Bold.woff2) format('woff2'),
+       url(/assets/fonts/NotoSansJP-Bold.woff) format('woff'),
+       url(/assets/fonts/NotoSansJP-Bold.otf) format('opentype');
+}
+
+}

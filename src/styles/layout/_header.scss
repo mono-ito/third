@@ -1,0 +1,288 @@
+.l-header {
+  position: relative;
+  height: 50px;
+  z-index: 10;
+  @include mq-up() {
+    height: 110px;
+  }
+  &__in {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #333;
+    @include mq-up() {
+      position: static;
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__logo {
+    position: relative;
+    z-index: 10;
+  }
+  &__utility {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    @include mq-up() {
+      display: block;
+      position: static;
+      max-width: 300px;
+      margin-left: auto;
+    }
+  }
+  &__utility-in {
+    padding: 60px 10px 0;
+    background-color: #333;
+    @include mq-up() {
+      padding: 0 0 0 20px;
+    }
+  }
+  &__search {
+    display: flex;
+  }
+  &__search-input {
+    flex: 1 1 auto;
+    width: 1%;
+    height: 34px;
+    padding: 5px 10px;
+    font-size: 1.6rem;
+    border-radius: 3px 0 0 3px;
+  }
+  &__search-trigger {
+    display: flex;
+  }
+  &__search-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    background-color: #248b9a;
+    border-radius: 0 3px 3px 0;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  &__menu {
+    margin: 10px -20px 0;
+    max-height: calc(100vh - 94px);
+    overflow-y: auto;
+    @include mq-up() {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      max-height: none;
+      margin: 0;
+      overflow: visible;
+      background-color: #136e7b;
+    }
+  }
+  &__menu-list {
+    @include mq-up() {
+      display: flex;
+      border-left: 1px solid #50a2ae;
+      border-right: 1px solid #50a2ae;
+    }
+  }
+  &__menu-item {
+    @include mq-up() {
+      display: flex;
+      flex: 1;
+    }
+    & + & {
+      border-top: 1px solid #50a2ae;
+      @include mq-up() {
+        border-top: none;
+        border-left: 1px solid #50a2ae;
+      }
+    }
+  }
+  &__menu-link {
+    display: block;
+    padding: 20px;
+    background-color: #248b9a;
+    color: #fff;
+    @include mq-up() {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+  &__submenu {
+    background-color: #136e7b;
+    @include mq-up() {
+      display: none;
+      position: absolute;
+      width: 100vw;
+      top: 100%;
+      left: -20px;
+      padding: 40px calc((100% - 1000px) / 2 + 20px);
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      background-color: #333;
+    }
+  }
+  &__submenu-list {
+    @include mq-up() {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -20px;
+      margin-top: -10px;
+    }
+  }
+  &__submenu-item {
+    @include mq-up() {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+  }
+  &__submenu-link {
+    display: block;
+    border-top: 1px solid #248b9a;
+    padding: 20px;
+    line-height: 1.5;
+    font-size: 1.2rem;
+    color: #fff;
+    @include mq-up() {
+      border: none;
+      padding: 0;
+      color: #fff;
+    }
+  }
+  &__menu-trigger,
+  &__menu-trigger::before,
+  &__menu-trigger::after,
+  &__menu-trigger-mark {
+    display: inline-block;
+    transition: transform $transition, opacity $transition;
+  }
+  &__menu-trigger {
+    position: absolute;
+    z-index: 10;
+    top: 14px;
+    right: 10px;
+    width: 25px;
+    height: 22px;
+    @include mq-up() {
+      display: none;
+    }
+  }
+  &__menu-trigger::before,
+  &__menu-trigger::after,
+  &__menu-trigger-mark {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+  }
+  &__menu-trigger::before,
+  &__menu-trigger::after {
+    content: '';
+  }
+  &__menu-trigger::before {
+    top: 0;
+  }
+  &__menu-trigger::after {
+    bottom: 0;
+  }
+  &__menu-trigger-mark {
+    top: 10px;
+  }
+  // 上からスライド
+  .is-loaded &__utility--top {
+    @include mq-down() {
+      transition: max-height $transition;
+    }
+  }
+  &__utility--top {
+    @include mq-down() {
+      max-height: 0;
+      overflow: hidden;
+    }
+  }
+  // 右からスライドフェード
+  .is-loaded &__utility--right {
+    @include mq-down() {
+      transition: opacity $transition, transform $transition;
+    }
+  }
+  &__utility--right {
+    @include mq-down() {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+  // フェードイン
+  .is-loaded &__utility--fade {
+    @include mq-down() {
+      transition: opacity $transition;
+    }
+  }
+  &__utility--fade {
+    @include mq-down() {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+  // メニューアクティブ
+  &__menu-trigger.is-active + &__utility--top {
+    @include mq-down() {
+      max-height: 100vh;
+    }
+  }
+  &__menu-trigger.is-active + &__utility--right {
+    @include mq-down() {
+      transform: translate(0);
+      opacity: 1;
+    }
+  }
+  &__menu-trigger.is-active + &__utility--fade {
+    @include mq-down() {
+      transform: none;
+      opacity: 1;
+    }
+  }
+  &__menu-trigger.is-active::before {
+    transform: translateY(10px) rotate(-45deg);
+  }
+  &__menu-trigger.is-active &__menu-trigger-mark {
+    opacity: 0;
+  }
+  &__menu-trigger.is-active::after {
+    transform: translateY(-10px) rotate(45deg);
+  }
+  // サブメニューアクティブ SP
+  &__submenu {
+    @include mq-down() {
+      @include hidden();
+    }
+  }
+  // サブメニューアクティブ PC
+  &__menu-link.is-active {
+    @include mq-up() {
+      background-color: #136e7b;
+    }
+  }
+  &__menu-link.is-active + &__submenu {
+    @include mq-up() {
+      display: block;
+      max-height: none !important;
+    }
+  }
+  // メニュー追従
+  &__menu.is-active {
+    @include mq-up() {
+      position: fixed;
+      top: 0;
+      bottom: auto;
+    }
+  }
+}

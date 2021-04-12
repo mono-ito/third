@@ -1,0 +1,23 @@
+.p-breadcrumb {
+  display: none;
+  @include mq-up() {
+    display: block;
+    border-top: 1px solid #50a2ae;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #248b9a;
+    color: #fff;
+    font-size: 1.4rem;
+  }
+  &__group {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__item + &__item::before {
+    content: '>';
+    margin: 0 5px;
+  }
+  &__link {
+    color: #fff;
+  }
+}

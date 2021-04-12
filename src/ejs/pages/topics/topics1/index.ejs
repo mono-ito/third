@@ -1,0 +1,35 @@
+<%_;
+// ページ設定
+var page = {
+  title: '',
+  description: '',
+  keywords: '',
+  breadcrumb01Text: '',
+  breadcrumb01Link: '',
+  breadcrumb02Text: '',
+  breadcrumb02Link: '',
+  breadcrumb03Text: '',
+  uniqueHead: '',
+  uniqueFoot: ''
+}
+_%>
+<%- include(rootPath + 'parts/_head', {page:page}); %>
+
+<%# ここからヘッダー %>
+<%- include(rootPath + 'parts/_header', {page:page}); %>
+<%# ここからヘッダー %>
+
+<%# ここからパンくず %>
+<%- include(rootPath + 'parts/_breadcrumb', {page:page}); %>
+<%# ここまでパンくず %>
+
+<%# ここからコンテンツ %>
+<main class="l-main">
+</main>
+<%# ここまでコンテンツ %>
+
+<%# ここからフッター %>
+<%- include(rootPath + 'parts/_footer', {page:page}); %>
+<%# ここまでフッター %>
+
+<%- include(rootPath + 'parts/_foot', {page:page}); %>

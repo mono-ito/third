@@ -1,0 +1,41 @@
+.p-slider {
+  @include mq-up() {
+    padding: 0;
+  }
+  //slick
+  .slick-arrow {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    @include mq-up(lg) {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  .slick-prev {
+    left: 10px;
+    background-image: svg-load('assets/image/ico/ico_arrow_left_01.svg', fill=#e39600);
+    background-position: left center;
+    @include mq-up(lg) {
+      left: -80px;
+    }
+  }
+  .slick-next {
+    right: 10px;
+    background-image: svg-load('assets/image/ico/ico_arrow_right_01.svg', fill=#e39600);
+    background-position: right center;
+    @include mq-up(lg) {
+      right: -80px;
+    }
+  }
+}

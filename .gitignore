@@ -1,0 +1,13 @@
+.git
+.DS_Store
+~$*.xlsx
+proj.json
+package-lock.json
+node_modules
+Gemfile.lock
+test
+release
+setting.json
+styleguide.json
+theme-*.json
+src/ejs/theme/json

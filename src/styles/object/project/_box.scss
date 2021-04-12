@@ -1,0 +1,31 @@
+.p-box {
+  $this: #{&};
+  border: 1px solid transparent;
+  padding: 10px;
+  background-color: #248b9a;
+  color: #fff;
+  @include mq-up() {
+    padding: 10px 20px;
+  }
+  &__title {
+    line-height: 1.6;
+    font-weight: bold;
+  }
+  &__text {
+    line-height: 1.4;
+  }
+  // カラー
+  &--alert {
+    @extend #{$this};
+    border-color: currentColor;
+    background-color: #ffe4e1;
+    color: #e00100;
+  }
+  // 余白
+  * + & {
+    margin-top: 10px;
+    @include mq-up(){
+      margin-top: 20px;
+    }
+  }
+}

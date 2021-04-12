@@ -1,0 +1,31 @@
+.p-info {
+  &__item {
+    @include mq-up() {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+  &__head {
+    @include mq-up() {
+      min-width: 8em;
+      padding-right: 1em;
+    }
+  }
+  &__body {
+    margin-top: 5px;
+    @include mq-up() {
+      flex: 1;
+      margin-top: 0;
+    }
+  }
+  // 余白
+  * + & {
+    margin-top: 10px;
+    @include mq-up(){
+      margin-top: 20px;
+    }
+  }
+  &__item + &__item {
+    margin-top: 10px;
+  }
+}

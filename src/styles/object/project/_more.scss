@@ -1,0 +1,11 @@
+.p-more {
+  &__item {
+    opacity: 0;
+    @include hidden;
+  }
+  // アクティブ時
+  &__item.is-active {
+    max-height: none;
+    opacity: 1;
+  }
+}

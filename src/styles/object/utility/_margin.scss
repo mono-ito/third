@@ -1,0 +1,43 @@
+$margin-min: 0;
+$margin-max: 100;
+$margin-multiple: 5;
+
+//max-width
+@include responsive-down(".u-m-0") {
+  margin: 0 !important;
+}
+@include responsive-down(".u-mb-0") {
+  margin-bottom: 0 !important;
+}
+@include responsive-down(".u-ml-0") {
+  margin-left: 0 !important;
+}
+@include responsive-down(".u-mr-0") {
+  margin-right: 0 !important;
+}
+
+@for $i from $margin-min through $margin-max / $margin-multiple {
+  @include responsive-down(".u-mt-#{$i * $margin-multiple}") {
+    margin-top: #{$i * $margin-multiple}px !important;
+  }
+}
+
+//min-width
+@include responsive-up(".u-m-0") {
+  margin: 0 !important;
+}
+@include responsive-up(".u-mb-0") {
+  margin-bottom: 0 !important;
+}
+@include responsive-up(".u-ml-0") {
+  margin-left: 0 !important;
+}
+@include responsive-up(".u-mr-0") {
+  margin-right: 0 !important;
+}
+
+@for $i from $margin-min through $margin-max / $margin-multiple {
+  @include responsive-up(".u-mt-#{$i * $margin-multiple}") {
+    margin-top: #{$i * $margin-multiple}px !important;
+  }
+}

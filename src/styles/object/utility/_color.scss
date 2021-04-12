@@ -1,0 +1,39 @@
+@function colors($key) {
+  @return map-get($colors, $key);
+}
+
+$colors: (
+  white: #fff,
+  black: #000,
+  mine-shaft: #333,
+  dusty-gray: #999,
+  cararra: #e7e6e1,
+  quill-gray: #dbdad6,
+  red: #e00100,
+  pippin: #ffe4e1,
+  jelly-bean: #248b9a,
+  genoa: #136e7b,
+  hippie-blue: #50a2ae,
+  tangerine: #e39600,
+);
+
+@each $name, $color in $colors {
+  .u-color-#{$name} {
+    color: $color !important;
+  }
+  .u-bgcolor-#{$name} {
+    background-color: $color !important;
+  }
+}
+
+.u-bgcolor-transparent {
+  background-color: transparent !important;
+}
+
+.u-bgcolor-current {
+  background-color: currentColor !important;
+}
+
+.u-bg-none {
+  background: none !important;
+}

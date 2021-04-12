@@ -1,0 +1,18 @@
+<!-- ここからパンくず -->
+<nav class="p-breadcrumb l-block">
+  <ol class="p-breadcrumb__group">
+    <% if(page.breadcrumb01Text || set[i].breadcrumb01Text){ %>
+    <li class="p-breadcrumb__item"><% if (page.breadcrumb02Text || set[i].breadcrumb02Text) { %><a class="p-breadcrumb__link" href="<%- root %><% if (page.breadcrumb01Link) { %><%- page.breadcrumb01Link %><% } else { %><%- set[i].breadcrumb01Link %><% } %>"><% if (page.breadcrumb01Text) { %><%- page.breadcrumb01Text %><% } else { %><%- set[i].breadcrumb01Text %><% } %></a><% } else { %><% if (page.breadcrumb01Text) { %><%- page.breadcrumb01Text %><% } else { %><%- set[i].breadcrumb01Text %><% } %><% } %></li>
+    <% } %>
+    <% if(page.breadcrumb02Text || set[i].breadcrumb02Text){ %>
+    <li class="p-breadcrumb__item"><% if (page.breadcrumb03Text || set[i].breadcrumb03Text) { %><a class="p-breadcrumb__link" href="<%- root %><% if (page.breadcrumb02Link) { %><%- page.breadcrumb02Link %><% } else { %><%- set[i].breadcrumb02Link %><% } %>"><% if (page.breadcrumb02Text) { %><%- page.breadcrumb02Text %><% } else { %><%- set[i].breadcrumb02Text %><% } %></a><% } else { %><% if (page.breadcrumb02Text) { %><%- page.breadcrumb02Text %><% } else { %><%- set[i].breadcrumb02Text %><% } %><% } %></li>
+    <% } %>
+    <% if(page.breadcrumb03Text || set[i].breadcrumb03Text){ %>
+    <li class="p-breadcrumb__item"><% if (page.breadcrumb04Text || set[i].breadcrumb04Text) { %><a class="p-breadcrumb__link" href="<%- root %><% if (page.breadcrumb03Link) { %><%- page.breadcrumb03Link %><% } else { %><%- set[i].breadcrumb03Link %><% } %>"><% if (page.breadcrumb03Text) { %><%- page.breadcrumb03Text %><% } else { %><%- set[i].breadcrumb03Text %><% } %></a><% } else { %><% if (page.breadcrumb03Text) { %><%- page.breadcrumb03Text %><% } else { %><%- set[i].breadcrumb03Text %><% } %><% } %></li>
+    <% } %>
+    <% if(page.breadcrumb04Text || set[i].breadcrumb04Text){ %>
+    <li class="p-breadcrumb__item"><% if (page.breadcrumb04Text) { %><%- page.breadcrumb04Text %><% } else { %><%- set[i].breadcrumb04Text %><% } %></li>
+    <% } %>
+  </ol>
+</nav>
+<!-- ここまでパンくず -->

@@ -1,0 +1,70 @@
+// Sample Html
+//<div class="l-row">
+//  <div class="l-col-12 l-col-6-md l-col-3-lg">...</div>
+//  <div class="l-col-12 l-col-6-md l-col-3-lg">...</div>
+//  <div class="l-col-12 l-col-6-md l-col-3-lg">...</div>
+//  <div class="l-col-12 l-col-6-md l-col-3-lg">...</div>
+//</div>
+
+// grid
+$grid: 12;
+
+// column
+$column-1: 100% / ($grid / 1);
+$column-2: 100% / ($grid / 2);
+$column-2-4: 100% / ($grid / 2.4);
+$column-3: 100% / ($grid / 3);
+$column-4: 100% / ($grid / 4);
+$column-5: 100% / ($grid / 5);
+$column-6: 100% / ($grid / 6);
+$column-7: 100% / ($grid / 7);
+$column-8: 100% / ($grid / 8);
+$column-9: 100% / ($grid / 9);
+$column-10: 100% / ($grid / 10);
+$column-11: 100% / ($grid / 11);
+$column-12: 100% / ($grid / 12);
+
+.l-row {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.l-col,.l-col-1,.l-col-2,.l-col-2-4,.l-col-3,.l-col-4,.l-col-5,.l-col-6,.l-col-7,.l-col-8,.l-col-9,.l-col-10,.l-col-11,.l-col-12 {
+  flex: 0 0 auto;
+}
+.l-col    { flex-grow: 1;flex-basis: 0;max-width: 100%;}
+.l-col-1  { flex-basis: $column-1; max-width: $column-1;}
+.l-col-2  { flex-basis: $column-2; max-width: $column-2;}
+.l-col-2-4{ flex-basis: $column-2-4; max-width: $column-2-4;}
+.l-col-3  { flex-basis: $column-3; max-width: $column-3;}
+.l-col-4  { flex-basis: $column-4; max-width: $column-4;}
+.l-col-5  { flex-basis: $column-5; max-width: $column-5;}
+.l-col-6  { flex-basis: $column-6; max-width: $column-6;}
+.l-col-7  { flex-basis: $column-7; max-width: $column-7;}
+.l-col-8  { flex-basis: $column-8; max-width: $column-8;}
+.l-col-9  { flex-basis: $column-9; max-width: $column-9;}
+.l-col-10 { flex-basis: $column-10; max-width: $column-10;}
+.l-col-11 { flex-basis: $column-11; max-width: $column-11;}
+.l-col-12 { flex-basis: $column-12; max-width: $column-12;}
+
+// Midium
+@include mq-up(md) {
+  .l-col-md,.l-col-1-md,.l-col-2-md,.l-col-2-4-md,.l-col-3-md,.l-col-4-md,.l-col-5-md,.l-col-6-md,.l-col-7-md,.l-col-8-md,.l-col-9-md,.l-col-10-md,.l-col-11-md,.l-col-12-md {
+    flex: 0 0 auto;
+  }
+  .l-col-md    { flex-grow: 1;flex-basis: 0;max-width: 100%;}
+  .l-col-1-md  { flex-basis: $column-1; max-width: $column-1;}
+  .l-col-2-md  { flex-basis: $column-2; max-width: $column-2;}
+  .l-col-2-4-md{ flex-basis: $column-2-4; max-width: $column-2-4;}
+  .l-col-3-md  { flex-basis: $column-3; max-width: $column-3;}
+  .l-col-4-md  { flex-basis: $column-4; max-width: $column-4;}
+  .l-col-5-md  { flex-basis: $column-5; max-width: $column-5;}
+  .l-col-6-md  { flex-basis: $column-6; max-width: $column-6;}
+  .l-col-7-md  { flex-basis: $column-7; max-width: $column-7;}
+  .l-col-8-md  { flex-basis: $column-8; max-width: $column-8;}
+  .l-col-9-md  { flex-basis: $column-9; max-width: $column-9;}
+  .l-col-10-md { flex-basis: $column-10; max-width: $column-10;}
+  .l-col-11-md { flex-basis: $column-11; max-width: $column-11;}
+  .l-col-12-md { flex-basis: $column-12; max-width: $column-12;}
+}

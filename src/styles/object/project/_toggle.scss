@@ -1,0 +1,8 @@
+.p-toggle {
+  &::before {
+    content: 'OFF';
+  }
+  &.is-active::before {
+    content: 'ON';
+  }
+}

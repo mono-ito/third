@@ -1,0 +1,63 @@
+// ==========================================================================//
+//
+// [パーツ情報 - 変数]
+//
+// ========================================================================== //
+
+// フォントファミリー
+$font-style: 'Hiragino Sans', 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', sans-serif;
+//$font-style: '游ゴシック体', YuGothic, '游ゴシック', 'Yu Gothic', 'メイリオ', sans-serif;
+//$font-style: 'Yu Mincho', 'YuMincho', serif;
+
+// webfont
+$font-noto-sans-jp: true; // true or false
+@if $font-noto-sans-jp {
+  $font-style: 'Noto Sans JP', sans-serif;
+}
+
+// ブレイクポイント
+$default-breakpoint: 'md';
+$breakpoint-md: 768;
+$breakpoint-lg: 1024;
+$breakpoint-up: (
+  'md': 'screen and (min-width: #{$breakpoint-md}px)',
+  'lg': 'screen and (min-width: #{$breakpoint-lg}px)',
+) !default;
+
+// max-width
+$breakpoint-down: (
+  'md': 'screen and (max-width: #{$breakpoint-md - 1}px)',
+  'lg': 'screen and (max-width: #{$breakpoint-lg - 1}px)',
+) !default;
+
+// body背景
+$body-background: #e7e6e1;
+
+// コンテンツ幅
+$contents-width: 1000px;
+
+// コンテンツ余白
+$contents-gatter-sp: 10px;
+$contents-gatter-pc: 20px;
+
+// デフォルトフォントサイズ
+$fontsize-sp: 1.4rem;
+$fontsize-pc: 1.6rem;
+
+// デフォルトフォントカラー
+$font-color: #333;
+
+// デフォルトリンクカラー
+$link-color: #0062a0;
+
+// プレースホルダーカラー
+$placeholder-color: #999;
+
+// アニメーションスピード
+$transition: .3s;
+
+// 透明度
+$opacity: .7;
+
+// 影
+$shadow: 0 0 15px rgba(107, 154, 131, .5);

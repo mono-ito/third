@@ -1,0 +1,38 @@
+.c-tag {
+  $this: #{&};
+  display: inline-block;
+  border: 1px solid transparent;
+  padding: 2px 5px;
+  line-height: 1;
+  flex-shrink: 0;
+  font-size: 1rem;
+  color: #fff;
+  @include mq-up() {
+    font-size: 1.2rem;
+  }
+  //colors
+  &--red {
+    @extend #{$this};
+    background-color: #e00100;
+  }
+  &--gray {
+    @extend #{$this};
+    background-color: #999;
+  }
+  &--red-outline {
+    @extend #{$this};
+    background-color: #fff;
+    border-color: currentColor;
+    color: #e00100;
+  }
+  &--gray-outline {
+    @extend #{$this};
+    background-color: #fff;
+    border-color: currentColor;
+    color: #999;
+  }
+  // 余白
+  & + & {
+    margin-left: 5px;
+  }
+}

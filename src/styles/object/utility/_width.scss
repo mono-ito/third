@@ -1,0 +1,8 @@
+//max-width
+@include responsive-down(".u-w-auto") {
+  width: auto !important;
+}
+//min-width
+@include responsive-up(".u-w-auto") {
+  width: auto !important;
+}

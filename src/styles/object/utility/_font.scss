@@ -1,0 +1,26 @@
+
+$font-size-min: 10;
+$font-size-max: 40;
+$font-size-multiple: 1;
+
+//max-width
+@for $i from $font-size-min through $font-size-max / $font-size-multiple {
+  @include responsive-down(".u-fz-#{$i * $font-size-multiple}") {
+    font-size: #{($i * $font-size-multiple)/10}rem !important;
+  }
+}
+
+//min-width
+@for $i from $font-size-min through $font-size-max / $font-size-multiple {
+  @include responsive-up(".u-fz-#{$i * $font-size-multiple}") {
+    font-size: #{($i * $font-size-multiple)/10}rem !important;
+  }
+}
+
+.u-fw-nomral {
+  font-weight: normal !important;
+}
+
+.u-fw-bold {
+  font-weight: bold !important;
+}

@@ -1,0 +1,59 @@
+.p-flag {
+  $this: #{&};
+  @include mq-up() {
+    display: flex;
+  }
+  &__hero {
+    text-align: center;
+    @include mq-up() {
+      display:table;
+      padding-right: 20px;
+    }
+  }
+  &__caption {
+    margin-top: 5px;
+    line-height: 1.2;
+    font-size: 1rem;
+    @include mq-up() {
+      display:table-caption;
+      caption-side:bottom;
+      padding-right: 20px;
+    }
+  }
+  &__body {
+    margin-top: 20px;
+    @include mq-up() {
+      flex: 1;
+      margin-top: 0;
+    }
+  }
+  &__image {
+    @include mq-down() {
+      width: auto;
+    }
+  }
+  &--reverse {
+    @include mq-up() {
+      flex-direction: row-reverse;
+    }
+    #{$this}__hero {
+      @include mq-up() {
+        padding-left: 20px;
+        padding-right: 0;
+      }
+    }
+    #{$this}__caption {
+      @include mq-up() {
+        padding-left: 20px;
+        padding-right: 0;
+      }
+    }
+  }
+  // 余白
+  * + & {
+    margin-top: 10px;
+    @include mq-up(){
+      margin-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+<p class="c-text">include使用します。<br>
+  <%%- include(rootPath + 'parts/_header', {page:page}); %><br>
+  ※スタイルガイド内では追従はさせないようにしています。
+</p>
+
+<header class="l-header">
+  <div class="l-header__in l-block">
+    <p class="l-header__logo"><a class="l-header__logo-link" href="#"><img class="l-header__logo-image" src="http://placehold.it/118x30&text=LOGO" alt="LOGO"></a></p>
+    <a href="#" class="l-header__menu-trigger js-toggle" data-delay="300"><span class="l-header__menu-trigger-mark"></span></a>
+    <div class="l-header__utility l-header__utility--top">
+      <div class="l-header__utility-in">
+        <form class="l-header__search">
+          <input class="l-header__search-input" type="search" placeholder="Search">
+          <div class="l-header__search-trigger">
+            <button class="l-header__search-button" type="submit">検索</button>
+          </div>
+        </form>
+        <nav class="l-header__menu l-block">
+          <ul class="l-header__menu-list">
+            <li class="l-header__menu-item">
+              <a class="l-header__menu-link js-accordion" data-group="menu" href="#">layout</a>
+              <div class="l-header__submenu">
+                <div class="l-header__submenu-in">
+                  <ul class="l-header__submenu-list">
+                    <% for(var l in styleguide.layout){ %>
+                    <li class="l-header__submenu-item"><a class="l-header__submenu-link js-scroll" href="#<%= l.replace('.ejs','') %>"><span class="c-icon--arrow"><%= l.replace('.ejs','') %></span></a></li>
+                    <% } %>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="l-header__menu-item">
+              <a class="l-header__menu-link js-accordion" data-group="menu" href="#">component</a>
+              <div class="l-header__submenu">
+                <div class="l-header__submenu-in">
+                  <ul class="l-header__submenu-list">
+                    <% for(var c in styleguide.component){ %>
+                    <li class="l-header__submenu-item"><a class="l-header__submenu-link js-scroll" href="#<%= c.replace('.ejs','') %>"><span class="c-icon--arrow"><%= c.replace('.ejs','') %></span></a></li>
+                    <% } %>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="l-header__menu-item">
+              <a class="l-header__menu-link js-accordion" data-group="menu" href="#">project</a>
+              <div class="l-header__submenu">
+                <div class="l-header__submenu-in">
+                  <ul class="l-header__submenu-list">
+                    <% for(var p in styleguide.project){ %>
+                    <li class="l-header__submenu-item"><a class="l-header__submenu-link js-scroll" href="#<%= p.replace('.ejs','') %>"><span class="c-icon--arrow"><%= p.replace('.ejs','') %></span></a></li>
+                    <% } %>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="l-header__menu-item">
+              <a class="l-header__menu-link js-accordion" data-group="menu" href="#">js</a>
+              <div class="l-header__submenu">
+                <div class="l-header__submenu-in">
+                  <ul class="l-header__submenu-list">
+                    <% for(var j in styleguide.js){ %>
+                    <li class="l-header__submenu-item"><a class="l-header__submenu-link js-scroll" href="#<%= j.replace('.ejs','') %>"><span class="c-icon--arrow"><%= j.replace('.ejs','') %></span></a></li>
+                    <% } %>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="l-header__menu-item">
+              <a class="l-header__menu-link js-accordion" data-group="menu" href="#">utility</a>
+              <div class="l-header__submenu">
+                <div class="l-header__submenu-in">
+                  <ul class="l-header__submenu-list">
+                    <% for(var u in styleguide.utility){ %>
+                      <li class="l-header__submenu-item"><a class="l-header__submenu-link js-scroll" href="#<%= u.replace('.ejs','') %>"><span class="c-icon--arrow"><%= u.replace('.ejs','') %></span></a></li>
+                    <% } %>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
