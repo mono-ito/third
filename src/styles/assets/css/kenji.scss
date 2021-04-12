@@ -65,6 +65,8 @@ $cMenuOpen: $cBlack;
   top: 100px;
   width: 100%;
   z-index: 60;
+  ::after {
+  }
 
   &__btn {
     background-color: unset;
@@ -169,6 +171,16 @@ $cMenuOpen: $cBlack;
       }
     }
     &__btn {
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        cursor: default;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 5;
+      }
       & > span {
         background-color: $cMenuClose;
 
