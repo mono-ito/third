@@ -1,24 +1,52 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width">
-<meta name="format-detection" content="telephone=no">
-<title>ここに支給されたtitleを入力して下さい</title>
-<meta name="description" content="ここに支給されたdescriptionを入力して下さい">
-<meta name="keywords" content="ここに支給されたkeywordsを入力して下さい">
-<!-- css -->
-<link rel="stylesheet" href="/assets/css/common.css">
-<link rel="stylesheet" href="/assets/css/ituki.css">
-<!-- /css -->
-</head>
-<body>
-
-
-
-
-
-
-</body>
+  <head prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>ここに支給されたtitleを入力して下さい</title>
+    <meta
+      name="description"
+      content="ここに支給されたdescriptionを入力して下さい"
+    />
+    <meta name="keywords" content="ここに支給されたkeywordsを入力して下さい" />
+    <!-- css -->
+    <link rel="stylesheet" href="/assets/css/common.css" />
+    <link rel="stylesheet" href="/assets/css/ituki.css" />
+    <!-- /css -->
+  </head>
+  <body>
+    <header class="l-header">
+      <nav class="l-navigation">
+        <div class="c-hamburger">
+          <div class="c-hamburger__line c-hamburger__line--1"></div>
+          <div class="c-hamburger__line c-hamburger__line--2"></div>
+          <div class="c-hamburger__line c-hamburger__line--3"></div>
+        </div>
+        <ul class="l-navigation__list">
+          <li class="l-navigation__item">
+            <a class="l-navigation__link" href="#">Menu01 </a>
+          </li>
+          <li class="l-navigation__item">
+            <a class="l-navigation__link" href="#">Menu02 </a>
+          </li>
+          <li class="l-navigation__item">
+            <a class="l-navigation__link" href="#">Menu03 </a>
+          </li>
+          <li class="l-navigation__item">
+            <a class="l-navigation__link" href="#">Menu04 </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <script>
+      const hamurger = document.querySelector(".c-hamburger");
+      const navbar = document.querySelector(".l-navigation");
+      hamurger.addEventListener("click", () => {
+        navbar.classList.toggle("is-open");
+        console.log("hello");
+      });
+    </script>
+  </body>
 </html>
