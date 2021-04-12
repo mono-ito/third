@@ -7,3 +7,58 @@
 // [個別スタイル]
 //
 // ========================================================================== */
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.l-header {
+    max-width: 100%;
+
+}
+.p-header-list {
+    display: flex;
+   
+}
+.c-header-list {
+    border: solid 1px #BFBFBF;
+    width: 25%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 40px 0;
+    position: relative;
+
+    &:hover {
+        background-color: #F1F1F1;
+
+        & .fas{
+            transition: all .6s;
+            transform: translate(18px, 0);
+        }
+        &::after {
+            transform: scale(1, 1);/*X方向にスケール拡大*/
+        }
+    }
+    &::after{
+        content: '';
+        /*絶対配置で線の位置を決める*/
+        position: absolute;
+        bottom: 10%;
+        left: 10%;
+        /*線の形状*/
+        width: 80%;
+        height: 4px;
+        background:#7EA400;
+        /*アニメーションの指定*/
+        transition: all .6s;
+        transform: scale(0, 1);/*X方向0、Y方向1*/
+        transform-origin: left top;/*左上基点*/
+        
+    }
+}
+.my-green {
+    color: #7EA400;
+    padding-right: 20px;
+}
+
+ 
