@@ -15,13 +15,8 @@
 </head>
 <body>
     <div class="c-mobile-menu__cover"></div>
-    <!-- <div class="nav-trigger"></div> -->
     <header class="l-header">
         <div class="l-header__inner">
-            <div class="l-header__logo">
-                <span>Hello</span>
-                <span>World</span>
-            </div>
             <nav class="l-header__nav">
                 <ul class="l-header__list">
                     <li class="l-header__item"><a class="l-header__link" href="#">Menu01</a></li>
@@ -30,7 +25,7 @@
                     <li class="l-header__item"><a class="l-header__link" href="#">Menu04</a></li>
                 </ul>
             </nav>
-            <button class="c-mobile-menu__btn">
+            <button class="l-header__menu-btn">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -54,7 +49,7 @@
         </ul>
     </nav>
     <script language="javascript" type="text/javascript">
-    let button = document.querySelector('.c-mobile-menu__btn');
+    let button = document.querySelector('.l-header__menu-btn');
     let menu = document.querySelector('.c-mobile-menu');
     button.addEventListener('click', () => {button.classList.toggle('is-open');});
     button.addEventListener('click', () => {menu.classList.toggle('is-open');});
