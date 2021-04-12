@@ -10,6 +10,11 @@
 $cBlack: #7ea400;
 $cMenuClose: $cBlack;
 $cMenuOpen: $cBlack;
+$cHoverBg: #f2f2f2;
+
+body {
+  background-color: #ffffff;
+}
 
 .l-header {
   position: fixed;
@@ -85,8 +90,6 @@ $cMenuOpen: $cBlack;
   top: 100px;
   width: 100%;
   z-index: 60;
-  ::after {
-  }
 
   &__btn {
     background-color: unset;
@@ -129,7 +132,7 @@ $cMenuOpen: $cBlack;
     display: block;
     height: 100px;
     padding: 0 45px;
-    background-color: #f2f2f2;
+    background-color: $cHoverBg;
     border: 1px solid #fdfdfd;
     &::after {
       position: absolute;
@@ -143,8 +146,6 @@ $cMenuOpen: $cBlack;
       border-left-color: $cBlack;
       transition: all 0.6s;
     }
-    // transition: transform 0.3s, opacity 0.2s;
-    // opacity: 0;
   }
   &__link {
     display: block;
@@ -217,8 +218,8 @@ $cMenuOpen: $cBlack;
 
 @include mq-up() {
   .l-header {
-    &__logo {
-      display: none;
+    &__inner {
+      padding: 0;
     }
     &__nav {
       display: block;
@@ -229,52 +230,57 @@ $cMenuOpen: $cBlack;
     &__list {
       height: 100%;
       display: flex;
-      justify-content: center;
     }
     &__item {
+      width: calc(100% / 4 - 1px);
       position: relative;
       margin: 0;
       border: 1px solid #f1f1f1;
-      width: 270px;
       text-align: center;
       &::before {
         content: "";
         position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 0%;
+        left: 5%;
+        bottom: 9px;
+        width: 0;
         height: 2px;
         background: $cBlack;
         z-index: 1;
         transition: all 0.4s;
       }
       &:hover::before {
-        width: 100%;
+        width: 90%;
       }
     }
     &__link {
-      padding: 40px 100px;
+      display: block;
+      position: relative;
+      padding: 90px;
       color: #333 !important;
       text-align: center;
-      position: relative;
-      display: inline-block;
-      text-align: center;
-      &::after {
-        position: absolute;
-        top: 50%;
-        left: 20%;
-        content: "";
-        margin-top: -4px;
-        border: 7px solid transparent;
-        border-top-width: 5px;
-        border-bottom-width: 5px;
-        border-left-color: $cBlack;
-        transition: all 0.6s;
+      width: 100%;
+      padding: 42px 15px;
+      span {
+        position: relative;
+        &::before {
+          position: absolute;
+          top: 0;
+          left: -20px;
+          content: "";
+          margin-top: 7px;
+          border: 7px solid transparent;
+          border-top-width: 5px;
+          border-bottom-width: 5px;
+          border-left-color: $cBlack;
+          transition: all 0.6s;
+        }
       }
       &:hover {
         background-color: #f1f1f1;
-        &.l-header__link::after {
-          left: 25%;
+        span {
+          &::before {
+            left: -14px;
+          }
         }
       }
     }
