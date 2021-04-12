@@ -58,6 +58,8 @@
     text-align: center;
     flex-grow: 1;
     padding: 43px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     transition: background-color 600ms;
     &:hover {
       background-color: #f1f1f1;
@@ -115,6 +117,11 @@
       flex-direction: column;
       background-color: #f2f2f2;
       transition: all 600ms;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    &__item {
+      width: 100%;
+      border-right: none;
     }
     &.is-open &__list {
       right: 0;
