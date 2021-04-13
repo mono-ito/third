@@ -16,6 +16,7 @@ body {
     height: 100%;
     &-list {
       height: 100%;
+      display: flex;
     }
     &-link {
       position: relative;
@@ -118,7 +119,6 @@ body {
       position: absolute;
       left: -120%;
       &-list {
-        display: flex;
         flex-direction: column;
         justify-content: flex-start;
         height: auto;
