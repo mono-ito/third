@@ -166,13 +166,14 @@ body {
       }
 
       .is-open {
-          &:nth-child(1) {
+
+          & .c-hamburger__line--1 {
             transform: translateY(20px) rotate(45deg);
           }
-          &:nth-child(2) {
+          & .c-hamburger__line--2 {
             opacity: 0;
           }
-          &:nth-child(3) {
+          & .c-hamburger__line--3 {
             transform: translateY(-20px) rotate(-45deg);
           }
       }
