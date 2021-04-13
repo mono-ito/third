@@ -175,12 +175,26 @@ body {
       border-right: none;
       border-bottom: solid 1px #bfbfbf;
       background-color: #f1f1f1;
-      &:hover .global-navbar__icon {
+      &:hover .c-global-navbar__icon {
         border-left: 12px solid #7ea400;
       }
       &::after {
         content: none;
       }
+    }
+    &__icon {
+      border-top: 6px solid transparent;
+      border-right: 12px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 12px solid #7ea400;
+      font-size: 14px;
+      &::after {
+        content: none;
+      }
+    }
+    &__title {
+      left: 76px;
+      font-size: 30px;
     }
     &__item {
       margin-left: 46.4px;
