@@ -14,7 +14,6 @@
 <!-- /css -->
 </head>
 <body>
-    <div class="c-mobile-menu__cover"></div>
     <header class="l-header">
         <div class="l-header__inner">
             <nav class="l-header__nav">
@@ -32,25 +31,9 @@
             </button>
         </div>
     </header>
-    <nav class="c-mobile-menu">
-        <ul class="c-mobile-menu__main">
-            <li class="c-mobile-menu__item">
-                <a class="c-mobile-menu__link" href="#">Menu01</a>
-            </li>
-            <li class="c-mobile-menu__item">
-                <a class="c-mobile-menu__link" href="#">Menu02</a>
-            </li>
-            <li class="c-mobile-menu__item">
-                <a class="c-mobile-menu__link" href="#">Menu03</a>
-            </li>
-            <li class="c-mobile-menu__item">
-                <a class="c-mobile-menu__link" href="#">Menu04</a>
-            </li>
-        </ul>
-    </nav>
     <script language="javascript" type="text/javascript">
     let button = document.querySelector('.l-header__menu-btn');
-    let menu = document.querySelector('.c-mobile-menu');
+    let menu = document.querySelector('.l-header__nav');
     button.addEventListener('click', () => {button.classList.toggle('is-open');});
     button.addEventListener('click', () => {menu.classList.toggle('is-open');});
     </script>

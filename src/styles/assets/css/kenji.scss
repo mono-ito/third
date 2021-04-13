@@ -11,11 +11,10 @@ $cBg: #ffffff;
 $cBlack: #7ea400;
 $cHoverBg: #f2f2f2;
 $cBorder: #bfbfbf;
-
+$cFont: #333;
 body {
   background-color: $cBg;
 }
-
 .l-header {
   position: fixed;
   top: 0;
@@ -36,8 +35,13 @@ body {
     }
   }
   &__nav {
-    display: none;
+    position: fixed;
+    left: -120%;
+    top: 100px;
+    width: 100%;
+    transition: all 0.6s !important;
     @include mq-up() {
+      position: static;
       display: block;
       height: 100%;
       width: 100%;
@@ -46,20 +50,51 @@ body {
   }
 
   &__list {
-    display: flex;
+    padding: 0;
+    font-size: 3rem;
     @include mq-up() {
+      display: flex;
       height: 100%;
       width: 100%;
+      font-size: 1.6rem;
     }
   }
 
   &__item {
-    margin-left: 20px;
+    position: relative;
+    display: block;
+    height: 100px;
+    padding: 0 45px;
+    background-color: $cHoverBg;
+    border-bottom: 1px solid $cBorder;
 
     & > a {
-      color: $cBlack;
+      color: $cFont;
+    }
+    &:first-child {
+      border-top: 1px solid $cBorder;
+    }
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      content: "";
+      margin-top: -9px;
+      border: 7px solid transparent;
+      border-top-width: 5px;
+      border-bottom-width: 5px;
+      border-left-color: $cBlack;
+      transition: all 0.6s;
     }
     @include mq-up() {
+      &::after {
+        position: static;
+        border: none;
+      }
+      &:first-child {
+        border-top: none;
+      }
+      background-color: #fff;
       margin: 0;
       width: calc(100% / 4);
       position: relative;
@@ -90,8 +125,11 @@ body {
       }
     }
   }
-  @include mq-up() {
-    &__link {
+  &__link {
+    display: block;
+    padding: 32px 0;
+    color: #333;
+    @include mq-up() {
       display: block;
       position: relative;
       padding: 90px;
@@ -148,79 +186,6 @@ body {
   }
 }
 
-.c-mobile-menu {
-  position: fixed;
-  left: -120%;
-  top: 100px;
-  width: 100%;
-  transition: all 0.6s !important;
-
-  &__btn {
-    background-color: unset;
-    border: none;
-    outline: none !important;
-    cursor: pointer;
-
-    & > span {
-      background-color: $cBlack;
-      width: 35px;
-      height: 2px;
-      display: block;
-      margin-bottom: 9px;
-      transition: transform 0.7s;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-  &__main {
-    padding: 0;
-    font-size: 3rem;
-  }
-  &__cover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 1s;
-    cursor: pointer;
-    z-index: 30;
-  }
-  &__item {
-    position: relative;
-    display: block;
-    height: 100px;
-    padding: 0 45px;
-    background-color: $cHoverBg;
-    border-bottom: 1px solid $cBorder;
-    &:first-child {
-      border-top: 1px solid $cBorder;
-    }
-    &::after {
-      position: absolute;
-      top: 50%;
-      left: 20px;
-      content: "";
-      margin-top: -9px;
-      border: 7px solid transparent;
-      border-top-width: 5px;
-      border-bottom-width: 5px;
-      border-left-color: $cBlack;
-      transition: all 0.6s;
-    }
-  }
-  &__link {
-    display: block;
-    padding: 30px 0;
-    color: #333;
-  }
-}
-
 .is-open {
   &.l-header__menu-btn {
     @include mq-up() {
@@ -253,37 +218,7 @@ body {
       }
     }
   }
-  &.c-mobile-menu {
+  &.l-header__nav {
     left: 0;
-    @include mq-up() {
-      display: none;
-    }
-    &__main {
-      font-size: 3rem;
-    }
-    &__cover {
-      opacity: 1;
-      visibility: visible;
-    }
-    &__item {
-      background-color: $cHoverBg;
-      opacity: 1;
-      position: relative;
-      display: block;
-      height: 100px;
-      padding: 0 45px;
-      &::after {
-        position: absolute;
-        top: 50%;
-        left: 6%;
-        content: "";
-        margin-top: -9px;
-        border: 7px solid transparent;
-        border-top-width: 5px;
-        border-bottom-width: 5px;
-        border-left-color: $cBlack;
-        transition: all 0.6s;
-      }
-    }
   }
 }
