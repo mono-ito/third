@@ -9,12 +9,6 @@
 // ========================================================================== */
 
 
-
-
-// ーーーーーーーーーーーーーーーーーーーー
-// 以下PC・SP共通部分
-// ーーーーーーーーーーーーーーーーーーーー
-
 * {
     padding: 0;
     margin: 0;
@@ -30,9 +24,51 @@ body {
 
 .l-header {
     max-width: 100%;
+    &__block {
+
+        @include mq-up($breakpoint: $default-breakpoint) {
+                display: flex;
+                text-align: center;
+        }
+
+        @include mq-down($breakpoint: $default-breakpoint) {
+                position: fixed;
+                margin-top: 100px;
+                width: 100%;
+                height: 100%;
+                left: -800px;
+                transition: all .6s;
+        ｝
+    ｝
+    // l-header__block　ここまで
 
     &__list {
         clear: both;
+        position: relative;
+
+        @include mq-up($breakpoint: $default-breakpoint) {
+                border-bottom: solid 1px #BFBFBF;
+                border-left: solid 1px #BFBFBF;
+                width: 25%;
+                box-sizing: border-box;
+                padding: 40px 20px 40px 0;
+                font-size: 0.87em;
+        ｝
+
+        @include mq-down($breakpoint: $default-breakpoint) {
+                padding: 40px 45px;
+                border: solid 1px #BFBFBF;
+                background-color: #F2F2F2;
+                font-size: 1.87em;
+        ｝
+
+        & a {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
 
         &::before {
             content:"";
@@ -44,124 +80,58 @@ body {
             vertical-align: middle;
             margin-bottom: 2px;
         }
-    }
 
-}
-// ーーーーーーーーーーーーーーーーーーーー
-// 以下PC画面
-// ーーーーーーーーーーーーーーーーーーーー
-
-@include mq-up($breakpoint: $default-breakpoint) {
-
- 
-.l-header {
-
-    &__block {
-       
-        display: flex;
-        text-align: center;
-    }
-     // ここまで、l-header__block
-        &__list{
-
-            border-bottom: solid 1px #BFBFBF;
-            border-left: solid 1px #BFBFBF;
-            width: 25%;
-            box-sizing: border-box;
-            padding: 40px 20px 40px 0;
-            position: relative;
-            font-size: 0.87em;
-
-            & a {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-            }
-
-            &:nth-child(1) {
+        &:nth-child(1) {
+            @include mq-up($breakpoint: $default-breakpoint) {
                 border-left: none;
-            }
-           
-            &:hover {
-                background-color: #F1F1F1;
-                cursor: pointer;
-    
-                &:before{
-                    transition: all .6s;
-                    transform: translate(10px, 0);
-                }
-                &::after {
-                    transform: scale(1, 1);/*X方向にスケール拡大*/
-                }
-            }
-           
-            &::after{
-                content: '';
-                /*絶対配置で線の位置を決める*/
-                position: absolute;
-                bottom: 10%;
-                left: 8px;
-                /*線の形状*/
-                width: calc( 100% - 16px );
-                height: 4px;
-                background:#7EA400;
-                /*アニメーションの指定*/
-                transition: all .6s;
-                transform: scale(0, 1);/*X方向0、Y方向1*/
-                transform-origin: left top;/*左上基点*/  
-            }
-        }
-        // ここまで、l-header__list  
-}
-}
-// ーーーーーーーーーーーーーーーーーーーー
-// 以下SP画面
-// ーーーーーーーーーーーーーーーーーーーー 
-
-@include mq-down($breakpoint: $default-breakpoint) {
-
-    .l-header {
-
-        &__block {
-            position: fixed;
-            margin-top: 100px;
-            width: 100%;
-            height: 100%;
-            left: -800px;
-            transition: all .6s;
-        }
-     // ここまで、l-header__block
-
-        &__list {
-            padding: 40px 45px;
-            border: solid 1px #BFBFBF;
-            background-color: #F2F2F2;
-            font-size: 1.87em;
-            position: relative;
-
-            & a {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-            }
-
-            &:nth-child(1) {
+            ｝
+            @include mq-down($breakpoint: $default-breakpoint) {
                 border-bottom: none;
-            }
+            ｝
+        }       
+        @include mq-down($breakpoint: $default-breakpoint) {
             &:nth-child(2) {
                 border-bottom: none;
             }
             &:nth-child(3) {
                 border-bottom: none;
             }
+        ｝
+        @include mq-up($breakpoint: $default-breakpoint) {
+        &:hover {
+            background-color: #F1F1F1;
+            cursor: pointer;
+
+            &:before{
+                transition: all .6s;
+                transform: translate(10px, 0);
+            }
+            &::after {
+                transform: scale(1, 1);/*X方向にスケール拡大*/
+            }
+            }
         }
-        // ここまで、l-header__list
-    }
-    // ここまで、l-header
+
+        @include mq-up($breakpoint: $default-breakpoint) {
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: 10%;
+                left: 8px;
+                width: calc( 100% - 16px );
+                height: 4px;
+                background:#7EA400;
+                transition: all .6s;
+                transform: scale(0, 1);
+                transform-origin: left top;
+            }
+        }
+}
+// l-header__list　ここまで
+｝
+// l-header　ここまで
+    
+@include mq-down($breakpoint: $default-breakpoint) {
 
     #l-header__hamburger {
         position: relative;
@@ -206,20 +176,7 @@ body {
             transform: translateY(-20px) rotate(-45deg);
           }
       }
-
       .nav-open {
         left: 0;
       }
-
-
-
-
-
-
-
-
-
-
-
-
 }
