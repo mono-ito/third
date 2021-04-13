@@ -7,3 +7,175 @@
 // [個別スタイル]
 //
 // ========================================================================== */
+
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+a {
+    color: #000;
+}
+body {
+    background-color: #ffffff;
+}   
+
+.l-header {
+    max-width: 100%;
+    &__block {
+
+        @include mq-up($breakpoint: $default-breakpoint) {
+                display: flex;
+                text-align: center;
+        }
+
+        @include mq-down($breakpoint: $default-breakpoint) {
+                position: fixed;
+                margin-top: 100px;
+                width: 100%;
+                height: 100%;
+                left: -800px;
+                transition: all .6s;
+        }
+    }
+    // l-header__block　ここまで
+
+    &__list {
+        clear: both;
+        position: relative;
+
+        @include mq-up($breakpoint: $default-breakpoint) {
+                border-bottom: solid 1px #BFBFBF;
+                border-left: solid 1px #BFBFBF;
+                width: 25%;
+                box-sizing: border-box;
+                padding: 40px 20px 40px 0;
+                font-size: 0.87em;
+        }
+
+        @include mq-down($breakpoint: $default-breakpoint) {
+                padding: 40px 45px;
+                border: solid 1px #BFBFBF;
+                background-color: #F2F2F2;
+                font-size: 1.87em;
+        }
+
+        & a {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        &::before {
+            content:"";
+            border-left: 7px solid #7EA400;
+            border-top: 3.5px solid transparent;
+            border-bottom: 3.5px solid transparent;
+            padding-right: 20px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-bottom: 2px;
+        }
+
+        &:nth-child(1) {
+            @include mq-up($breakpoint: $default-breakpoint) {
+                border-left: none;
+            }
+            @include mq-down($breakpoint: $default-breakpoint) {
+                border-bottom: none;
+            }
+        }     
+        @include mq-down($breakpoint: $default-breakpoint) {
+            &:nth-child(2) {
+                border-bottom: none;
+            }
+            &:nth-child(3) {
+                border-bottom: none;
+            }
+        }
+        @include mq-up($breakpoint: $default-breakpoint) {
+        &:hover {
+            background-color: #F1F1F1;
+            cursor: pointer;
+        }
+            &:before{
+                transition: all .6s;
+                transform: translate(10px, 0);
+            }
+            &::after {
+                transform: scale(1, 1);/*X方向にスケール拡大*/
+            }
+        }    
+    
+        @include mq-up($breakpoint: $default-breakpoint) {
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: 10%;
+                left: 8px;
+                width: calc( 100% - 16px );
+                height: 4px;
+                background:#7EA400;
+                transition: all .6s;
+                transform: scale(0, 1);
+                transform-origin: left top;
+            }
+        }
+    }    
+// l-header__list　ここまで
+}
+// l-header　ここまで
+    
+@include mq-down($breakpoint: $default-breakpoint){
+
+    #l-header__hamburger {
+        position: relative;
+        float: right;
+        width: 50px;
+        height: 44px;
+        margin: 25px;
+        cursor: pointer;
+    }
+        & span {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color:#7EA400;
+        }  
+      
+      #l-header__hamburger, #l-header__hamburger span {
+        display: inline-block;
+        transition: all .7s;
+        box-sizing: border-box;
+      }
+      #l-header__hamburger span:nth-of-type(1) {
+        top: 0;
+      }
+      #l-header__hamburger span:nth-of-type(2) {
+        top: 20px;
+      }
+      #l-header__hamburger span:nth-of-type(3) {
+        bottom: 0;
+      }
+
+      .is-open {
+
+          & .l-hamburger__line--1 {
+            transform: translateY(20px) rotate(45deg);
+          }
+          & .l-hamburger__line--2 {
+            opacity: 0;
+          }
+          & .l-hamburger__line--3 {
+            transform: translateY(-20px) rotate(-45deg);
+          }
+      }
+      .nav-open {
+        left: 0;
+      }
+}
