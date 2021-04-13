@@ -20,11 +20,11 @@ body {
   height: 100%;
 
   &__hamburger {
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
     position: fixed;
-    top: 30px;
-    right: 30px;
+    top: 23px;
+    right: 23px;
     cursor: pointer;
     display: none;
     flex-direction: column;
@@ -35,14 +35,14 @@ body {
       background-color: #7ea400;
       transition: all 0.8s;
       .is-open &--1 {
-        transform: rotateZ(-405deg) translate(-8px, 6px);
+        transform: rotateZ(-405deg) translate(-14px, 14px);
       }
       .is-open &--2 {
         transform: translateX(50px);
         background: transparent;
       }
       .is-open &--3 {
-        transform: rotateZ(405deg) translate(-8px, -6px);
+        transform: rotateZ(405deg) translate(-14px, -14px);
       }
     }
   }
@@ -62,7 +62,6 @@ body {
     height: 100%;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    transition: background-color 600ms;
     &:last-child {
       border-right: none;
     }
@@ -77,16 +76,15 @@ body {
     text-decoration: none;
     &-text {
       position: relative;
-      font-size: 0.875rem;
+      font-size: 1.4rem;
       color: #000000;
       &::before {
         content: "";
         position: absolute;
         left: 0px;
         top: 50%;
-        border: 10px transparent 20px 30px;
         transform: translate(-26.3px, -50%);
-        border-width: 2px 0 2px 5px;
+        border-width: 3.5px 0 3.5px 7px;
         border-color: transparent transparent transparent #7ea400;
         border-style: solid;
         transition: transform 600ms;
@@ -95,9 +93,9 @@ body {
     &::after {
       content: "";
       position: absolute;
-      width: 90%;
       height: 4px;
-      left: 5%;
+      left: 8px;
+      right: 8px;
       bottom: 8px;
       background-color: #7ea400;
       transform: scaleX(0);
@@ -139,8 +137,29 @@ body {
       width: 100%;
       border-right: none;
     }
+
+    &__link {
+      justify-content: left;
+      &-text {
+        font-size: 3rem; 
+        margin-left: 76px;
+        &::before {
+          border-width: 6px 0 6px 12px;
+          transform: translate(-29.6px, -50%);
+        }
+      }
+      &:hover &-text {
+        &::before {
+          transform: translate(-22.6px, -50%);
+        }
+      }
+    }
+
     &.is-open &__list {
       right: 0;
     }
   }
 }
+
+
+
