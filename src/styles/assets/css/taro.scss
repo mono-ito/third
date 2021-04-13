@@ -49,7 +49,7 @@ body {
       }
       &:hover .l-header__global-navbar-icon {
         transition: 0.6s;
-        left: 105.3px;
+        left: 35.1%;
       }
     }
     &-item {
@@ -58,7 +58,7 @@ body {
     &-icon {
       position: absolute;
       top: 48px;
-      left: 93.2px;
+      left: 31%;
       border-top: 3.5px solid transparent;
       border-right: 7px solid transparent;
       border-bottom: 3.5px solid transparent;
@@ -68,7 +68,7 @@ body {
     &-title {
       position: absolute;
       top: 43px;
-      left: 120px;
+      right: 43.44%;
       display: block;
       font-size: 14px;
       font-family: Roboto;
@@ -130,13 +130,11 @@ body {
         border-bottom: solid 1px #bfbfbf;
         background-color: #f1f1f1;
         &:hover .l-header__global-navbar-icon {
-          border-left: 12px solid #7ea400;
+          left: 46.4px;
         }
         &::after {
           content: none;
         }
-      }
-      &-item {
       }
       &-icon {
         top: 45.5px;
@@ -155,7 +153,6 @@ body {
       }
     }
   }
-
   .l-header__hamburger-line.is-click {
     position: absolute;
     display: block;
