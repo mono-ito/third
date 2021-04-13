@@ -1,24 +1,71 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width">
-<meta name="format-detection" content="telephone=no">
-<title>ここに支給されたtitleを入力して下さい</title>
-<meta name="description" content="ここに支給されたdescriptionを入力して下さい">
-<meta name="keywords" content="ここに支給されたkeywordsを入力して下さい">
-<!-- css -->
-<link rel="stylesheet" href="/assets/css/common.css">
-<link rel="stylesheet" href="/assets/css/taro.css">
-<!-- /css -->
-</head>
-<body>
+  <head prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>css-traning</title>
+    <meta
+      name="description"
+      content="ここに支給されたdescriptionを入力して下さい"
+    />
+    <meta name="keywords" content="ここに支給されたkeywordsを入力して下さい" />
+    <!-- css -->
+    <link rel="stylesheet" href="/assets/css/common.css" />
+    <link rel="stylesheet" href="/assets/css/taro.css" />
+    <!-- /css -->
+  </head>
 
+  <body>
+    <header class="l-header">
+      <div class="l-header__hamburger-menu" id="hamburger">
+        <span class="l-header__hamburger-line" id="line-1"></span>
+        <span class="l-header__hamburger-line" id="line-2"></span>
+        <span class="l-header__hamburger-line" id="line-3"></span>
+      </div>
+      <nav class="l-header__global-navbar" id="navbar">
+        <ul class="l-header__global-navbar-list">
+          <li class="l-header__global-navbar-item">
+            <a class="l-header__global-navbar-link" href="">
+              <span class="l-header__global-navbar-icon"></span>
+              <span class="l-header__global-navbar-title">Menu01</span>
+            </a>
+          </li>
+          <li class="l-header__global-navbar-item">
+            <a class="l-header__global-navbar-link" href="">
+              <span class="l-header__global-navbar-icon"> </span>
+              <span class="l-header__global-navbar-title">Menu02</span>
+            </a>
+          </li>
+          <li class="l-header__global-navbar-item">
+            <a class="l-header__global-navbar-link" href="">
+              <span class="l-header__global-navbar-icon"></span>
+              <span class="l-header__global-navbar-title">Menu03</span>
+            </a>
+          </li>
+          <li class="l-header__global-navbar-item">
+            <a class="l-header__global-navbar-link" href="">
+              <span class="l-header__global-navbar-icon"></span>
+              <span class="l-header__global-navbar-title">Menu04</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-
-
-
-
-</body>
+    <script>
+      function hamburger() {
+        document.getElementById("line-1").classList.toggle("is-click");
+        document.getElementById("line-2").classList.toggle("is-click");
+        document.getElementById("line-3").classList.toggle("is-click");
+        document.getElementById("navbar").classList.toggle("is-click");
+      }
+      document
+        .getElementById("hamburger")
+        .addEventListener("click", function () {
+          hamburger();
+        });
+    </script>
+  </body>
 </html>

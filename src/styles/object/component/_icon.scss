@@ -5,15 +5,15 @@
     display: inline-block;
     min-width: 1.62rem;
     min-height: 1.62rem;
-    vertical-align: -.13em;
+    vertical-align: -0.13em;
     flex-shrink: 0;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
   }
   &::before {
-    content: '';
-    margin-right: .5rem;
+    content: "";
+    margin-right: 0.5rem;
   }
   &:empty::before {
     margin-right: 0;
@@ -24,7 +24,7 @@
       content: none;
     }
     &::after {
-      content: '';
+      content: "";
       margin-left: 5px;
     }
   }
@@ -33,14 +33,20 @@
     @extend #{$this};
     &::before,
     &::after {
-      background-image: svg-load('assets/image/ico/ico_arrow_right_01.svg', fill=#e39600);
+      background-image: svg-load(
+        "assets/image/ico/ico_arrow_right_01.svg",
+        fill=#e39600
+      );
     }
   }
   &--arrow-white {
     @extend #{$this};
     &::before,
     &::after {
-      background-image: svg-load('assets/image/ico/ico_arrow_right_01.svg', fill=#ffffff);
+      background-image: svg-load(
+        "assets/image/ico/ico_arrow_right_01.svg",
+        fill=#ffffff
+      );
     }
   }
 
@@ -49,7 +55,10 @@
     @extend #{$this};
     &::before,
     &::after {
-      background-image: svg-load('assets/image/ico/ico_arrow_left_01.svg', fill=#e39600);
+      background-image: svg-load(
+        "assets/image/ico/ico_arrow_left_01.svg",
+        fill=#e39600
+      );
     }
   }
 
@@ -58,7 +67,10 @@
     @extend #{$this};
     &::before,
     &::after {
-      background-image: svg-load('assets/image/ico/ico_arrow_circle_top.svg', fill=#e39600);
+      background-image: svg-load(
+        "assets/image/ico/ico_arrow_circle_top.svg",
+        fill=#e39600
+      );
     }
   }
 
@@ -67,14 +79,20 @@
     @extend #{$this};
     &::before,
     &::after {
-      background-image: svg-load('assets/image/ico/ico_window_01.svg', fill=#e39600);
+      background-image: svg-load(
+        "assets/image/ico/ico_window_01.svg",
+        fill=#e39600
+      );
     }
   }
   &--window-white {
     @extend #{$this};
     &::before,
     &::after {
-      background-image: svg-load('assets/image/ico/ico_window_01.svg', fill=#fff);
+      background-image: svg-load(
+        "assets/image/ico/ico_window_01.svg",
+        fill=#fff
+      );
     }
   }
 
@@ -83,8 +101,10 @@
     @extend #{$this};
     &::before,
     &::after {
-      background-image: svg-load('assets/image/ico/ico_pdf_01.svg', fill=#e00100);
+      background-image: svg-load(
+        "assets/image/ico/ico_pdf_01.svg",
+        fill=#e00100
+      );
     }
   }
-
 }
