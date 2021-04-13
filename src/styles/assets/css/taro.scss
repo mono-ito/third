@@ -26,6 +26,7 @@ body {
       width: 25%;
       border-right: solid 1px #bfbfbf;
       border-bottom: solid 1px #bfbfbf;
+      transition: 0.6s;
       &:last-child {
         border-right: none;
       }
