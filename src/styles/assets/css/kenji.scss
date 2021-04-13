@@ -83,11 +83,14 @@ body {
       margin: 0;
       width: calc(100% / 4);
       position: relative;
+      border-top: 0;
       border-right: 1px solid $cBorder;
-      border-top: 1px solid $cBorder;
       border-bottom: 1px solid $cBorder;
       text-align: center;
       z-index: 1;
+      &:first-child {
+        border-top: none;
+      }
       &:last-of-type {
         border-right: none;
       }
