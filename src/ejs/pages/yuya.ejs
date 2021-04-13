@@ -14,11 +14,43 @@
 <!-- /css -->
 </head>
 <body>
-
-
-
-
-
-
+    <header class="l-header">
+        <div id="target">
+            <div class="l-header__target-inner">
+              <span class="c-header__target-inner-line c-header__target-inner-1" id="line1"></span>
+              <span class="c-header__target-inner-line c-header__target-inner-2" id="line2"></span>
+              <span class="c-header__target-inner-line c-header__target-inner-3" id="line3"></span>
+            </div>
+      　</div>
+        <nav class="l-header__sp-nav" id="nav_f">
+            <ul class="l-header__nav">
+                <li class="l-header__nav-item l-header__nth-child">
+                      <a href="#" class="c-header__nav-text"><span class="c-header__nav-text-span"><span class="c-header__nav-text-icon">Menu01</span></span></a> 
+                </li>
+                <li class="l-header__nav-item">
+                      <a href="#" class="c-header__nav-text"><span class="c-header__nav-text-span"><span class="c-header__nav-text-icon">Menu02</span></span></a>
+                </li>
+                <li class="l-header__nav-item">
+                      <a href="#" class="c-header__nav-text"><span class="c-header__nav-text-span"><span class="c-header__nav-text-icon">Menu03</span></span></a>
+                </li>
+                <li class="l-header__nav-item">
+                      <a href="#" class="c-header__nav-text"><span class="c-header__nav-text-span"><span class="c-header__nav-text-icon">Menu04</span></span></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <script type="text/javascript">
+        function hamburger() {
+        document.getElementById('line1').classList.toggle('linea');
+        document.getElementById('line2').classList.toggle('lineb');
+     　　document.getElementById('line3').classList.toggle('linec');
+     　　document.getElementById('target').classList.toggle('slidex');
+     　　document.getElementById('nav_f').classList.toggle('fadein');
+        }
+        
+        document.getElementById('target').addEventListener('click', function () {
+        　　hamburger();
+    });
+    </script>
 </body>
 </html>
