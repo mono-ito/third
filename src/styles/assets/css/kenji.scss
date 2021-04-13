@@ -68,10 +68,13 @@ body {
       border-bottom: 1px solid $cBorder;
       text-align: center;
       z-index: 1;
+      &:last-of-type {
+        border-right: none;
+      }
       &::before {
         content: "";
         position: absolute;
-        left: 5%;
+        left: 8px;
         bottom: 9px;
         width: 0;
         height: 4px;
@@ -82,7 +85,7 @@ body {
       &:hover {
         background-color: $cHoverBg;
         &::before {
-          width: 90%;
+          width: calc(100% - 16px);
         }
       }
     }
