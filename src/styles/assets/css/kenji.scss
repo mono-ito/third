@@ -23,8 +23,6 @@ body {
   width: 100%;
   height: 100px;
   background-color: transparent;
-  display: flex;
-  align-items: center;
   z-index: 999;
 
   &__inner {
@@ -32,7 +30,6 @@ body {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
     padding: 0 20px;
     @include mq-up() {
       padding: 0;
@@ -70,6 +67,7 @@ body {
       border-top: 1px solid $cBorder;
       border-bottom: 1px solid $cBorder;
       text-align: center;
+      z-index: 1;
       &::before {
         content: "";
         position: absolute;
@@ -81,8 +79,11 @@ body {
         z-index: -1;
         transition: all 0.4s;
       }
-      &:hover::before {
-        width: 90%;
+      &:hover {
+        background-color: $cHoverBg;
+        &::before {
+          width: 90%;
+        }
       }
     }
   }
@@ -95,6 +96,14 @@ body {
       text-align: center;
       width: 100%;
       padding: 42px 15px;
+      &:hover {
+        opacity: 1;
+        span {
+          &::before {
+            left: -16px;
+          }
+        }
+      }
       span {
         position: relative;
         &::before {
@@ -108,16 +117,6 @@ body {
           border-bottom-width: 5px;
           border-left-color: $cBlack;
           transition: all 0.6s;
-        }
-      }
-      &:hover {
-        .l-header__item {
-          background-color: $cHoverBg;
-        }
-        span {
-          &::before {
-            left: -16px;
-          }
         }
       }
     }
