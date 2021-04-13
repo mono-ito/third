@@ -30,6 +30,9 @@ body {
     display: none;
     flex-direction: column;
     justify-content: space-around;
+    @include mq-down() {
+      display: flex;
+    }
     &-line {
       width: 100%;
       height: 5px;
@@ -55,6 +58,20 @@ body {
     flex-direction: row;
     align-items: center;
     list-style: none;
+    @include mq-down() {
+      position: absolute;
+      top: 100px;
+      right: -1000px;
+      height: 420px;
+      flex-direction: column;
+      background-color: #f2f2f2;
+      transition: all 600ms;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &.is-open &__list {
+    right: 0;
   }
 
   &__item {
@@ -66,6 +83,10 @@ body {
     &:last-child {
       border-right: none;
     }
+    @include mq-down() {
+      width: 100%;
+      border-right: none;
+    }
   }
 
   &__link {
@@ -75,10 +96,17 @@ body {
     align-items: center;
     height: 100%;
     text-decoration: none;
+    @include mq-down() {
+      justify-content: left;
+    }
     &-text {
       position: relative;
       font-size: 1.4rem;
       color: #000000;
+      @include mq-down() {
+        font-size: 3rem;
+        margin-left: 76px;
+      }
       &::before {
         content: "";
         position: absolute;
@@ -89,6 +117,10 @@ body {
         border-color: transparent transparent transparent #7ea400;
         border-style: solid;
         transition: transform 600ms;
+        @include mq-down() {
+          border-width: 6px 0 6px 12px;
+          transform: translate(-29.6px, -50%);
+        }
       }
     }
     &::after {
@@ -113,54 +145,10 @@ body {
     &:hover &-text {
       &::before {
         transform: translate(-15.7px, -50%);
-      }
-    }
-  }
-}
-
-// Media Query
-@media screen and (max-width: 768px) {
-  .l-navigation {
-    &__hamburger {
-      display: flex;
-    }
-    &__list {
-      position: absolute;
-      top: 100px;
-      right: -1000px;
-      height: 420px;
-      flex-direction: column;
-      background-color: #f2f2f2;
-      transition: all 600ms;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-    }
-    &__item {
-      width: 100%;
-      border-right: none;
-    }
-
-    &__link {
-      justify-content: left;
-      &-text {
-        font-size: 3rem;
-        margin-left: 76px;
-        &::before {
-          border-width: 6px 0 6px 12px;
-          transform: translate(-29.6px, -50%);
-        }
-      }
-      &:hover &-text {
-        &::before {
+        @include mq-down() {
           transform: translate(-22.6px, -50%);
         }
       }
     }
-
-    &.is-open &__list {
-      right: 0;
-    }
   }
 }
-
-
-
