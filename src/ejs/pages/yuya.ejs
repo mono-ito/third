@@ -15,35 +15,49 @@
 </head>
 <body>
     <header class="l-header">
-        <nav class="l-header__sp-nav">
+        <div id="target">
+            <div class="l-header__target-inner">
+              <span class="c-header__target-inner-line c-header__target-inner-1" id="line1"></span>
+              <span class="c-header__target-inner-line c-header__target-inner-2" id="line2"></span>
+              <span class="c-header__target-inner-line c-header__target-inner-3" id="line3"></span>
+            </div>
+      　</div>
+        <nav class="l-header__sp-nav" id="nav_f">
             <ul class="l-header__nav">
                 <li class="p-header__nav-item p-header__nav-item--first">
-                    <p class="p-header__bottom">
-                        <a class="c-header__nav-text"><span>Menu01</span></a>
-                    </p>
+                      <a href="#" class="c-header__nav-text"><span>Menu01</span></a> 
                 </li>
                 <li class="p-header__nav-item">
-                    <p class="p-header__bottom">
-                        <a class="c-header__nav-text"><span>Menu02</span></a>
-                    </p>
+                      <a href="#" class="c-header__nav-text"><span>Menu02</span></a>
                 </li>
                 <li class="p-header__nav-item">
-                    <p class="p-header__bottom">
-                        <a class="c-header__nav-text"><span>Menu03</span></a>
-                    </p>
+                      <a href="#" class="c-header__nav-text"><span>Menu03</span></a>
                 </li>
                 <li class="p-header__nav-item">
-                    <p class="p-header__bottom">
-                        <a class="c-header__nav-text"><span>Menu04</span></a>
-                    </p>
+                    <a href="#" class="c-header__nav-text"><span>Menu04</span></a>
                 </li>
             </ul>
         </nav>
-        <button type="button" id="navbtn"></button>
     </header>
     <script type="text/javascript">
-        document.getElementById("navbtn").onclick = function(){
-        document.querySelector('html').classList.toggle('open');
+        function hamburger() {
+        document.getElementById('line1').classList.toggle('linea');
+        document.getElementById('line2').classList.toggle('lineb');
+     　　document.getElementById('line3').classList.toggle('linec');
+     　　document.getElementById('target').classList.toggle('slidex');
+     　　document.getElementById('nav_f').classList.toggle('fadein');
+        }
+        
+        document.getElementById('target').addEventListener('click', function () {
+        　　hamburger();
+        });
+        
+        let list = document.getElementsByClassName('list');
+        
+        for (let i = 0; i < list.length; i++) {
+          list[i].addEventListener('click', function () {
+          hamburger();
+            });
         }
     </script>
 </body>
