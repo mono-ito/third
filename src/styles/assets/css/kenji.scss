@@ -149,12 +149,11 @@ body {
 }
 
 .c-mobile-menu {
-  display: none;
   position: fixed;
-  right: 0;
+  left: -120%;
   top: 100px;
   width: 100%;
-  z-index: 60;
+  transition: all 0.6s !important;
 
   &__btn {
     background-color: unset;
@@ -242,20 +241,20 @@ body {
 
       &:nth-child(1) {
         transition-delay: 70ms;
-        transform: translateY(11px) rotate(135deg);
+        transform: translateY(11px) rotate(45deg);
       }
       &:nth-child(2) {
         transition-delay: 0s;
-        transform: translateX(-18px) scaleX(0);
+        transform: scaleX(0);
       }
       &:nth-child(3) {
         transition-delay: 140ms;
-        transform: translateY(-11px) rotate(-135deg);
+        transform: translateY(-11px) rotate(-45deg);
       }
     }
   }
   &.c-mobile-menu {
-    display: block;
+    left: 0;
     @include mq-up() {
       display: none;
     }
@@ -267,7 +266,6 @@ body {
       visibility: visible;
     }
     &__item {
-      transform: none;
       background-color: $cHoverBg;
       opacity: 1;
       position: relative;
