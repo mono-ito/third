@@ -1,9 +1,209 @@
 // [環境設定]
-@import '../../foundation/_variables';
-@import '../../foundation/_mixin';
+@import "../../foundation/_variables";
+@import "../../foundation/_mixin";
 
 /* ==========================================================================//
 //
 // [個別スタイル]
 //
 // ========================================================================== */
+$cBg: #ffffff;
+$cBlack: #7ea400;
+$cHoverBg: #f2f2f2;
+$cBorder: #bfbfbf;
+$cFont: #333;
+body {
+  background-color: $cBg;
+}
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  background-color: transparent;
+  z-index: 999;
+  &__inner {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 20px;
+    @include mq-up() {
+      padding: 0;
+    }
+  }
+  &__nav {
+    position: fixed;
+    top: 100px;
+    left: -120%;
+    width: 100%;
+    transition: all 0.6s !important;
+    @include mq-up() {
+      position: static;
+    }
+  }
+
+  &__list {
+    padding: 0;
+    font-size: 3rem;
+    @include mq-up() {
+      display: flex;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: block;
+    height: 100px;
+    padding: 0 70px;
+    background-color: $cHoverBg;
+    border-bottom: 1px solid $cBorder;
+
+    & > a {
+      color: $cFont;
+    }
+    &:first-child {
+      border-top: 1px solid $cBorder;
+    }
+    @include mq-up() {
+      padding: 0;
+      background-color: $cBg;
+      width: calc(100% / 4);
+      position: relative;
+      border-right: 1px solid $cBorder;
+      border-bottom: 1px solid $cBorder;
+      text-align: center;
+      z-index: 1;
+      &:first-child {
+        border-top: 0;
+      }
+      &:last-of-type {
+        border-right: none;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 8px;
+        bottom: 9px;
+        height: 4px;
+        width: 0;
+        background: $cBlack;
+        transition: all 0.4s;
+      }
+      &::after {
+        position: static;
+        border: none;
+      }
+      &:hover {
+        background-color: $cHoverBg;
+        &::before {
+          width: calc(100% - 16px);
+        }
+      }
+    }
+  }
+  &__link {
+    display: block;
+    padding: 32px 0;
+    span {
+      position: relative;
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: -32px;
+        content: "";
+        margin-top: -6px;
+        border: 14px solid transparent;
+        border-top-width: 7px;
+        border-bottom-width: 7px;
+        border-left-color: $cBlack;
+        transition: all 0.6s;
+      }
+    }
+    @include mq-up() {
+      position: relative;
+      text-align: center;
+      padding: 42px 0;
+      &:hover {
+        opacity: 1;
+        span {
+          &::before {
+            left: -16px;
+          }
+        }
+      }
+      span {
+        position: relative;
+        &::before {
+          position: absolute;
+          top: 0;
+          left: -26px;
+          content: "";
+          margin-top: 7px;
+          border: 7px solid transparent;
+          border-top-width: 5px;
+          border-bottom-width: 5px;
+          border-left-color: $cBlack;
+          transition: all 0.6s;
+        }
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.l-header__menu-btn {
+  cursor: pointer;
+  @include mq-up() {
+    display: none;
+  }
+  & > span {
+    background-color: $cBlack;
+    width: 35px;
+    height: 2px;
+    display: block;
+    margin-bottom: 9px;
+    transition: transform 0.7s;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.is-open {
+  &.l-header__menu-btn {
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      cursor: default;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    & > span {
+      &:nth-child(1) {
+        transition-delay: 70ms;
+        transform: translateY(11px) rotate(45deg);
+      }
+      &:nth-child(2) {
+        transition-delay: 0s;
+        transform: scaleX(0);
+      }
+      &:nth-child(3) {
+        transition-delay: 140ms;
+        transform: translateY(-11px) rotate(-45deg);
+      }
+    }
+    @include mq-up() {
+      display: none;
+    }
+  }
+  &.l-header__nav {
+    left: 0;
+  }
+}
