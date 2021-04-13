@@ -57,40 +57,38 @@ body {
 .l-header {
 
     &__block {
-
+       
         display: flex;
         text-align: center;
     }
      // ここまで、l-header__block
+        &__list{
 
-        &__list {
-
-            border: solid 1px #BFBFBF;
-            border-top: none;
+            border-bottom: solid 1px #BFBFBF;
+            border-left: solid 1px #BFBFBF;
             width: 25%;
             box-sizing: border-box;
             padding: 40px 20px 40px 0;
             position: relative;
             font-size: 0.87em;
 
+            & a {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+
             &:nth-child(1) {
-                border-right: none;
                 border-left: none;
             }
-            &:nth-child(2) {
-                border-right: none;
-            }
-            &:nth-child(3) {
-                border-right: none;
-            }
-            &:nth-child(4) {
-                border-right: none;
-            }
+           
             &:hover {
                 background-color: #F1F1F1;
                 cursor: pointer;
     
-                &::before{
+                &:before{
                     transition: all .6s;
                     transform: translate(10px, 0);
                 }
@@ -141,6 +139,15 @@ body {
             border: solid 1px #BFBFBF;
             background-color: #F2F2F2;
             font-size: 1.87em;
+            position: relative;
+
+            & a {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
 
             &:nth-child(1) {
                 border-bottom: none;
