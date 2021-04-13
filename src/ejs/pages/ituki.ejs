@@ -18,32 +18,46 @@
   </head>
   <body>
     <header class="l-header">
-      <nav class="l-navigation">
-        <div class="l-navigation__hamburger js-humberger-btn">
-          <div class="l-navigation__hamburger-line l-navigation__hamburger-line--1"></div>
-          <div class="l-navigation__hamburger-line l-navigation__hamburger-line--2"></div>
-          <div class="l-navigation__hamburger-line l-navigation__hamburger-line--3"></div>
+      <nav class="l-navigation js-navigation">
+        <div class="l-navigation__hamburger js-hamburger-btn">
+          <div
+            class="l-navigation__hamburger-line l-navigation__hamburger-line--1"
+          ></div>
+          <div
+            class="l-navigation__hamburger-line l-navigation__hamburger-line--2"
+          ></div>
+          <div
+            class="l-navigation__hamburger-line l-navigation__hamburger-line--3"
+          ></div>
         </div>
         <ul class="l-navigation__list">
           <li class="l-navigation__item">
-            <a class="l-navigation__link" href="#"><span class="l-navigation__link-text">Menu01</span></a>
+            <a class="l-navigation__link" href="#"
+              ><span class="l-navigation__link-text">Menu01</span></a
+            >
           </li>
           <li class="l-navigation__item">
-            <a class="l-navigation__link" href="#"><span class="l-navigation__link-text">Menu02</span></a>
+            <a class="l-navigation__link" href="#"
+              ><span class="l-navigation__link-text">Menu02</span></a
+            >
           </li>
           <li class="l-navigation__item">
-            <a class="l-navigation__link" href="#"><span class="l-navigation__link-text">Menu03</span></a>
+            <a class="l-navigation__link" href="#"
+              ><span class="l-navigation__link-text">Menu03</span></a
+            >
           </li>
           <li class="l-navigation__item">
-            <a class="l-navigation__link" href="#"><span class="l-navigation__link-text">Menu04</span></a>
+            <a class="l-navigation__link" href="#"
+              ><span class="l-navigation__link-text">Menu04</span></a
+            >
           </li>
         </ul>
       </nav>
     </header>
     <script>
-      const hamurger = document.querySelector(".js-humberger-btn");
-      const navbar = document.querySelector(".l-navigation");
-      hamurger.addEventListener("click", () => {
+      const hamburger = document.querySelector(".js-hamburger-btn");
+      const navbar = document.querySelector(".js-navigation");
+      hamburger.addEventListener("click", () => {
         navbar.classList.toggle("is-open");
       });
     </script>
